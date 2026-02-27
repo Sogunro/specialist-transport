@@ -1,36 +1,87 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# SafeRide Specialist Transport
+
+Safe, reliable, and person-centred specialist transportation services for vulnerable individuals, healthcare providers, educational institutions, and local authorities.
+
+**Live Site:** [https://sogunro.github.io/specialist-transport/](https://sogunro.github.io/specialist-transport/)
+
+---
+
+## Our Services
+
+| Service | Description |
+|---|---|
+| **SEND School Transport** | Home-to-school transport for children with Special Educational Needs and Disabilities |
+| **Transport Audit & Compliance** | Independent audits ensuring regulatory, contractual, and safeguarding standards |
+| **WAV Transportation** | Wheelchair Accessible Vehicle transport with ramps, lifts, and door-to-door support |
+| **Care Home & Elderly Transport** | Transport for elderly individuals and care home residents to appointments and social activities |
+| **Hospital Transfers** | Non-emergency patient transport, hospital discharges, and inter-facility transfers |
+
+## Pages
+
+| Page | Route | Description |
+|---|---|---|
+| Home | `/` | Hero section, service overview, stats, safety commitment, mission |
+| Services | `/services` | Detailed breakdown of all 5 specialist services |
+| About | `/about` | Mission, vision, values, and company journey |
+| Contact | `/contact` | Contact information and quote request form |
+| Driver Registration | `/driver/register` | 4-step application form for new drivers |
+| Driver Login | `/driver/login` | Driver portal sign-in |
+
+## Tech Stack
+
+- **Framework:** Next.js 16 (App Router, TypeScript)
+- **Styling:** Tailwind CSS v4
+- **Icons:** Lucide React
+- **Deployment:** GitHub Pages via GitHub Actions
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+# Clone the repository
+git clone https://github.com/Sogunro/specialist-transport.git
+cd specialist-transport
+
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the site.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Build & Deploy
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The site automatically deploys to GitHub Pages when you push to the `master` branch.
 
-## Learn More
+To build manually:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run build
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Static output is generated in the `out/` directory.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Design
 
-## Deploy on Vercel
+- **Theme:** Light, warm, professional healthcare design
+- **Background:** Warm cream (#FFF8F0)
+- **Primary colour:** Navy blue (#1B3A5C)
+- **Accent/CTA:** Coral orange (#E8633B)
+- **Inspired by:** [Elder](https://www.elder.org) care services website
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Safety & Compliance
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Fully licensed, insured, and regularly maintained vehicles
+- Enhanced DBS-checked drivers and passenger assistants
+- Comprehensive safeguarding and child protection policies
+- Staff trained in SEND awareness and vulnerable person support
+- Full compliance with local authority, NHS, and regulatory standards
+
+## Future Development
+
+- [ ] Add real images and videos of fleet and team
+- [ ] Connect driver registration to database (Neon Postgres)
+- [ ] Implement authentication for driver login (NextAuth.js)
+- [ ] Backend API for contact form submissions
+- [ ] Custom domain setup
