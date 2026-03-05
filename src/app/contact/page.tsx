@@ -12,9 +12,9 @@ import {
 } from "lucide-react";
 
 const contactInfo = [
-  { icon: Phone, title: "Phone", details: "0800 123 4567", subtitle: "Mon-Fri, 8am-6pm" },
-  { icon: Mail, title: "Email", details: "info@saferide-transport.co.uk", subtitle: "We reply within 24 hours" },
-  { icon: MapPin, title: "Office", details: "London, United Kingdom", subtitle: "By appointment only" },
+  { icon: Phone, title: "Phone", details: "0161 676 3832", subtitle: "Mon-Fri, 8am-6pm" },
+  { icon: Mail, title: "Email", details: "admin@connectcarepatienttransport.com", subtitle: "We reply within 24 hours" },
+  { icon: MapPin, title: "Office", details: "St. James's House, Suite 12, 6th Floor, Pendleton Way, Salford, M6 5FW", subtitle: "By appointment only" },
   { icon: Clock, title: "Operating Hours", details: "Mon-Fri: 6am - 8pm", subtitle: "Emergency: 24/7" },
 ];
 

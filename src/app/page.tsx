@@ -126,7 +126,7 @@ export default function Home() {
                   Find your service
                 </Link>
                 <a
-                  href="tel:08001234567"
+                  href="tel:01616763832"
                   className="px-8 py-3.5 border border-border rounded-full text-text-dark font-semibold hover:border-primary hover:text-primary transition-all btn-outline text-center"
                 >
                   Call us
@@ -152,21 +152,14 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Right — Image placeholder */}
+            {/* Right — Vehicle Image */}
             <div className="relative animate-fade-in-up animate-delay-200">
-              <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-blue-light via-white to-bg-warm aspect-[4/3] shadow-card">
-                {/* Replace this div with your actual image */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center space-y-4 p-8">
-                    <div className="w-24 h-24 mx-auto bg-blue-light rounded-full flex items-center justify-center">
-                      <Heart className="w-12 h-12 text-primary" />
-                    </div>
-                    <p className="text-text-light text-sm max-w-xs">
-                      Add your hero image here — a warm photo of your team,
-                      vehicle, or passengers
-                    </p>
-                  </div>
-                </div>
+              <div className="relative rounded-3xl overflow-hidden shadow-card">
+                <img
+                  src="/specialist-transport/images/wav-side-view.jpg"
+                  alt="SafeRide wheelchair accessible minibus"
+                  className="w-full h-full object-cover aspect-[4/3]"
+                />
               </div>
               {/* Decorative shape */}
               <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-accent/10 rounded-full blur-2xl" />
@@ -353,7 +346,77 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Mission Section */}
+      {/* Our Fleet Section */}
+      <section className="py-20 md:py-24 bg-bg">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-14">
+            <p className="text-blue-soft font-semibold text-sm uppercase tracking-wider mb-3">
+              Our Fleet
+            </p>
+            <h2 className="text-3xl md:text-4xl font-bold text-text-dark mb-4">
+              Purpose-built accessible vehicles
+            </h2>
+            <p className="text-text-light max-w-2xl mx-auto text-lg">
+              Our fleet includes wheelchair accessible vehicles with ramps, lifts, and safety restraints — fully maintained, licensed, and insured.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              { src: "/specialist-transport/images/wav-side-view.jpg", alt: "WAV minibus side view", label: "Wheelchair Accessible Minibus" },
+              { src: "/specialist-transport/images/wav-rear-open.jpg", alt: "WAV rear doors open showing wheelchair lift", label: "Rear Access & Wheelchair Lift" },
+              { src: "/specialist-transport/images/wav-ramp-deployed.jpg", alt: "WAV with ramp deployed", label: "Ramp Deployed for Easy Access" },
+              { src: "/specialist-transport/images/wav-interior-ramp.jpg", alt: "WAV interior with wheelchair tracks", label: "Spacious Interior with Safety Rails" },
+              { src: "/specialist-transport/images/trafic-side-view.jpg", alt: "Renault Trafic minibus", label: "Renault Trafic Patient Transport" },
+              { src: "/specialist-transport/images/trafic-rear-view.jpg", alt: "Renault Trafic rear view with child transport sign", label: "Safety Signage & Compliance" },
+            ].map((img) => (
+              <div key={img.src} className="group rounded-2xl overflow-hidden border border-border-light shadow-soft card-hover">
+                <div className="aspect-[4/3] overflow-hidden">
+                  <img
+                    src={img.src}
+                    alt={img.alt}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+                <div className="p-4 bg-bg-white">
+                  <p className="text-sm font-semibold text-text-dark">{img.label}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Video Showcase */}
+          <div className="mt-14">
+            <h3 className="text-xl font-bold text-text-dark text-center mb-8">See Our Vehicles in Action</h3>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="rounded-2xl overflow-hidden border border-border-light shadow-soft">
+                <video
+                  controls
+                  preload="metadata"
+                  className="w-full aspect-video object-cover"
+                  poster="/specialist-transport/images/wav-side-view.jpg"
+                >
+                  <source src="/specialist-transport/videos/fleet-video-1.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              <div className="rounded-2xl overflow-hidden border border-border-light shadow-soft">
+                <video
+                  controls
+                  preload="metadata"
+                  className="w-full aspect-video object-cover"
+                  poster="/specialist-transport/images/trafic-front-view.jpg"
+                >
+                  <source src="/specialist-transport/videos/fleet-video-2.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+            {/* Mission Section */}
       <section className="py-20 md:py-24 bg-bg-warm">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-blue-soft font-semibold text-sm uppercase tracking-wider mb-3">
@@ -411,8 +474,12 @@ export default function Home() {
 
               {/* Visual */}
               <div className="hidden lg:flex items-center justify-center">
-                <div className="w-56 h-56 bg-blue-light rounded-full flex items-center justify-center">
-                  <Users className="w-20 h-20 text-primary/40" />
+                <div className="rounded-2xl overflow-hidden shadow-card">
+                  <img
+                    src="/specialist-transport/images/trafic-side-view.jpg"
+                    alt="Renault Trafic minibus fleet vehicle"
+                    className="w-full h-auto object-cover rounded-2xl"
+                  />
                 </div>
               </div>
             </div>

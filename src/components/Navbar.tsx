@@ -85,12 +85,12 @@ export default function Navbar() {
           {/* Right side */}
           <div className="hidden lg:flex items-center gap-4">
             <a
-              href="tel:08001234567"
+              href="tel:01616763832"
               className="flex items-center gap-2 text-sm"
             >
               <Phone className="w-4 h-4 text-blue-soft" />
               <div>
-                <span className="font-bold text-text-dark">0800 123 4567</span>
+                <span className="font-bold text-text-dark">0161 676 3832</span>
                 <span className="block text-[11px] text-green-trust font-medium">
                   Lines are open
                 </span>
@@ -157,11 +157,11 @@ export default function Navbar() {
             </div>
             <div className="px-4 pt-4 space-y-3">
               <a
-                href="tel:08001234567"
+                href="tel:01616763832"
                 className="flex items-center gap-2 text-sm font-bold text-text-dark"
               >
                 <Phone className="w-4 h-4 text-blue-soft" />
-                0800 123 4567
+                0161 676 3832
               </a>
               <Link
                 href="/contact"

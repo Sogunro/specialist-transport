@@ -228,7 +228,50 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* Our Fleet */}
+      <section className="py-16 bg-bg-white border-t border-border-light">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <p className="text-blue-soft font-semibold text-sm uppercase tracking-wider mb-3">
+                Our Fleet
+              </p>
+              <h2 className="text-3xl font-bold text-text-dark mb-6">
+                Purpose-built for safety and accessibility
+              </h2>
+              <p className="text-text-body text-lg leading-relaxed mb-6">
+                Our fleet includes wheelchair accessible vehicles (WAVs) equipped with ramps,
+                lifts, and wheelchair restraints, alongside comfortable minibuses for patient
+                and school transport. Every vehicle is fully licensed, insured, and regularly
+                maintained to the highest standards.
+              </p>
+              <div className="grid grid-cols-2 gap-4">
+                <div className="rounded-xl overflow-hidden border border-border-light shadow-soft">
+                  <img src="/specialist-transport/images/wav-interior-ramp.jpg" alt="WAV interior with safety rails and wheelchair tracks" className="w-full aspect-[4/3] object-cover" />
+                </div>
+                <div className="rounded-xl overflow-hidden border border-border-light shadow-soft">
+                  <img src="/specialist-transport/images/wav-ramp-deployed.jpg" alt="Wheelchair ramp deployed" className="w-full aspect-[4/3] object-cover" />
+                </div>
+              </div>
+            </div>
+            <div className="space-y-4">
+              <div className="rounded-2xl overflow-hidden border border-border-light shadow-card">
+                <img src="/specialist-transport/images/trafic-other-side.jpg" alt="Fleet vehicle" className="w-full aspect-[16/10] object-cover" />
+              </div>
+              <div className="grid grid-cols-2 gap-4">
+                <div className="rounded-xl overflow-hidden border border-border-light shadow-soft">
+                  <img src="/specialist-transport/images/trafic-front-view.jpg" alt="Renault Trafic front" className="w-full aspect-square object-cover" />
+                </div>
+                <div className="rounded-xl overflow-hidden border border-border-light shadow-soft">
+                  <img src="/specialist-transport/images/trafic-rear-view.jpg" alt="Vehicle rear with child transport sign" className="w-full aspect-square object-cover" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+            {/* CTA */}
       <section className="py-20 bg-bg-warm">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-text-dark mb-4">

@@ -111,15 +111,15 @@ export default function Footer() {
               <ul className="space-y-4">
                 <li className="flex items-start gap-3">
                   <Phone className="w-4 h-4 text-blue-soft mt-0.5 shrink-0" />
-                  <span className="text-text-light text-sm">0800 123 4567</span>
+                  <span className="text-text-light text-sm">0161 676 3832</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Mail className="w-4 h-4 text-blue-soft mt-0.5 shrink-0" />
-                  <span className="text-text-light text-sm">info@saferide-transport.co.uk</span>
+                  <span className="text-text-light text-sm">admin@connectcarepatienttransport.com</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <MapPin className="w-4 h-4 text-blue-soft mt-0.5 shrink-0" />
-                  <span className="text-text-light text-sm">London, United Kingdom</span>
+                  <span className="text-text-light text-sm">St. James's House, Suite 12, 6th Floor, Pendleton Way, Salford, M6 5FW</span>
                 </li>
               </ul>
               <div className="flex gap-3 mt-6">

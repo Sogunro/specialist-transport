@@ -206,7 +206,41 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Safety Section */}
+      {/* Fleet Gallery */}
+      <section className="py-16 bg-bg-white border-t border-border-light">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <p className="text-blue-soft font-semibold text-sm uppercase tracking-wider mb-3">
+              Our Fleet
+            </p>
+            <h2 className="text-3xl font-bold text-text-dark">
+              Fully Accessible, Purpose-Built Vehicles
+            </h2>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {[
+              { src: "/specialist-transport/images/wav-side-view.jpg", alt: "WAV minibus side view" },
+              { src: "/specialist-transport/images/wav-rear-open.jpg", alt: "Rear access wheelchair lift" },
+              { src: "/specialist-transport/images/wav-ramp-deployed.jpg", alt: "Wheelchair ramp deployed" },
+              { src: "/specialist-transport/images/wav-interior-ramp.jpg", alt: "Interior with safety rails" },
+              { src: "/specialist-transport/images/trafic-side-view.jpg", alt: "Renault Trafic patient transport" },
+              { src: "/specialist-transport/images/trafic-front-view.jpg", alt: "Renault Trafic front view" },
+              { src: "/specialist-transport/images/trafic-other-side.jpg", alt: "Fleet vehicle other side" },
+              { src: "/specialist-transport/images/trafic-rear-view.jpg", alt: "Rear view with child transport sign" },
+            ].map((img) => (
+              <div key={img.src} className="rounded-xl overflow-hidden border border-border-light shadow-soft group">
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  className="w-full aspect-square object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+            {/* Safety Section */}
       <section className="py-20 bg-bg-white border-t border-border-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
