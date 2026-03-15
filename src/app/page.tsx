@@ -168,7 +168,7 @@ export default function Home() {
 
             {/* Right — Media Gallery/Carousel */}
             <div className="relative animate-fade-in-up animate-delay-200">
-              <div className="relative rounded-3xl overflow-hidden shadow-card aspect-[4/3]">
+              <div className="relative rounded-3xl overflow-hidden shadow-card aspect-[16/10]">
                 {heroMedia.map((media, index) => (
                   <div
                     key={index}
@@ -180,13 +180,13 @@ export default function Home() {
                       <img
                         src={media.src}
                         alt={media.alt}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover object-center"
                       />
                     ) : (
                       <video
                         src={media.src}
                         poster={media.poster}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover object-center"
                         muted
                         autoPlay={index === currentSlide}
                         loop

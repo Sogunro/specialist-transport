@@ -25,7 +25,7 @@ export default function DriverLoginPage() {
             <img
               src="/specialist-transport/images/logo.svg"
               alt="Connect Care Transportation Services"
-              className="h-12 w-auto"
+              className="h-14 w-auto"
             />
           </Link>
           <p className="text-[10px] uppercase tracking-[0.2em] text-blue-soft font-semibold mb-2">

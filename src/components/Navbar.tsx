@@ -17,7 +17,7 @@ export default function Navbar() {
             <img
               src="/specialist-transport/images/logo.svg"
               alt="Connect Care Transportation Services"
-              className="h-12 w-auto"
+              className="h-14 w-auto"
             />
           </Link>
 
