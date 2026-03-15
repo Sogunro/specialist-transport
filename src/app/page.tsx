@@ -118,7 +118,7 @@ export default function Home() {
             {/* Left — Text */}
             <div className="space-y-6 animate-fade-in-up">
               <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-text-dark leading-[1.15] tracking-tight">
-                Specialist transport{" "}
+                Connect Care{" "}
                 <span className="text-gradient">— the safer way</span> to travel
               </h1>
 

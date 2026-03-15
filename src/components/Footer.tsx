@@ -11,7 +11,7 @@ export default function Footer() {
             Ready to Get Started?
           </h2>
           <p className="text-white/80 max-w-2xl mx-auto mb-8 text-lg">
-            Contact us today to discuss your specialist transportation needs. We
+            Contact us today to discuss your transportation needs. We
             provide tailored solutions for every requirement.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -45,7 +45,7 @@ export default function Footer() {
                 />
               </Link>
               <p className="text-text-light text-sm leading-relaxed">
-                Safe, reliable, and person-centred specialist transportation services
+                Safe, reliable, and person-centred transportation services
                 for vulnerable individuals, healthcare providers, and local authorities.
               </p>
             </div>

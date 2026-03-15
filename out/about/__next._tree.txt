@@ -6,4 +6,4 @@
 :HL["/specialist-transport/images/fleet-other-side-2.jpg","image"]
 :HL["/specialist-transport/images/fleet-front-view-2.jpg","image"]
 :HL["/specialist-transport/images/fleet-rear-view-2.jpg","image"]
-0:{"buildId":"Dq_TdlzEOF6oTMzA6pAfN","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"about","paramType":null,"paramKey":"about","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
+0:{"buildId":"pXlnjMCGc-TmbqE35_lzb","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"about","paramType":null,"paramKey":"about","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}

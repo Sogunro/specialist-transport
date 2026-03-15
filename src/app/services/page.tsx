@@ -17,7 +17,7 @@ import {
 export const metadata = {
   title: "Our Services | Connect Care Transportation Services",
   description:
-    "Specialist transportation services including SEND school transport, wheelchair accessible vehicles, care home transport, and hospital transfers.",
+    "Connect Care transportation services including SEND school transport, wheelchair accessible vehicles, care home transport, and hospital transfers.",
 };
 
 const services = [
@@ -75,7 +75,7 @@ const services = [
     bg: "bg-rose-50",
     borderColor: "border-rose-200",
     description:
-      "We provide specialist transportation services for elderly individuals, care home residents, and vulnerable children and adults. Our service is designed to ensure comfort, dignity, and safety, while supporting access to essential services and social engagement.",
+      "We provide transportation services for elderly individuals, care home residents, and vulnerable children and adults. Our service is designed to ensure comfort, dignity, and safety, while supporting access to essential services and social engagement.",
     features: [
       "Transport to medical appointments, day centres, and healthcare services",
       "Transfers between care homes, supported living, and residential services",
@@ -122,7 +122,7 @@ export default function ServicesPage() {
             Our Services
           </p>
           <h1 className="text-4xl md:text-5xl font-bold text-text-dark mb-6 animate-fade-in-up animate-delay-100">
-            Specialist Transportation Services
+            Connect Care Transportation Services
           </h1>
           <p className="text-xl text-text-body max-w-3xl mx-auto leading-relaxed animate-fade-in-up animate-delay-200">
             Comprehensive, person-centred transport solutions delivered by trained,
@@ -254,7 +254,7 @@ export default function ServicesPage() {
       <section className="py-20 bg-bg border-t border-border-light">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-text-dark mb-4">
-            Need specialist transport?
+            Need transport services?
           </h2>
           <p className="text-xl text-text-body mb-10 max-w-2xl mx-auto">
             Get in touch to discuss your requirements. We provide tailored

@@ -38,7 +38,7 @@ export default function ContactPage() {
             Get in touch
           </h1>
           <p className="text-xl text-text-body max-w-2xl mx-auto animate-fade-in-up animate-delay-200">
-            Ready to discuss your specialist transport needs? Contact us today
+            Ready to discuss your transport needs? Contact us today
             for a free consultation and tailored quote.
           </p>
         </div>

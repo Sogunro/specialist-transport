@@ -15,7 +15,7 @@ import {
 export const metadata = {
   title: "About Us | Connect Care Transportation Services",
   description:
-    "Learn about our mission, values, and commitment to safe, reliable, and person-centred specialist transportation services.",
+    "Learn about Connect Care's mission, values, and commitment to safe, reliable, and person-centred transportation services.",
 };
 
 const values = [
@@ -105,7 +105,7 @@ export default function AboutPage() {
                 Driven by compassion
               </h1>
               <p className="text-xl text-text-body leading-relaxed animate-fade-in-up animate-delay-200">
-                We are a specialist transportation provider dedicated to serving
+                Connect Care is a transportation provider dedicated to serving
                 vulnerable individuals, healthcare providers, educational institutions,
                 and local authorities with safe, reliable, and person-centred services.
               </p>
@@ -157,7 +157,7 @@ export default function AboutPage() {
               </div>
               <h2 className="text-2xl font-bold text-text-dark mb-4">Our Vision</h2>
               <p className="text-text-body leading-relaxed">
-                To be the most trusted specialist transport provider in the UK,
+                To be the most trusted transport provider in the UK,
                 recognised for our unwavering commitment to safety, dignity, and
                 person-centred care. We envision a future where every vulnerable
                 individual has access to safe, reliable, and compassionate transportation.
@@ -278,7 +278,7 @@ export default function AboutPage() {
             Want to work with us?
           </h2>
           <p className="text-xl text-text-body mb-10 max-w-2xl mx-auto">
-            Whether you need specialist transport services or want to join our
+            Whether you need transport services or want to join our
             team, we would love to hear from you.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -91,7 +91,7 @@ export default function DriverRegisterPage() {
             Join our team
           </h1>
           <p className="text-lg text-text-body max-w-2xl mx-auto animate-fade-in-up animate-delay-200">
-            Register as a specialist transport driver. We are looking for compassionate,
+            Register as a Connect Care driver. We are looking for compassionate,
             reliable professionals.
           </p>
         </div>
