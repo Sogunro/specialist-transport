@@ -43,6 +43,10 @@ const services = [
     ],
     highlight:
       "We prioritise the safety, dignity, and wellbeing of every child, ensuring they are transported in a calm, supportive, and secure environment.",
+    images: [
+      { src: "/specialist-transport/images/fleet-side-view-2.jpg", alt: "SEND school transport vehicle" },
+      { src: "/specialist-transport/images/fleet-rear-view-2.jpg", alt: "Child transport safety signage" },
+    ],
   },
   {
     id: "wav",
@@ -65,6 +69,10 @@ const services = [
     ],
     highlight:
       "Our service ensures individuals with mobility needs can travel safely, comfortably, and independently.",
+    images: [
+      { src: "/specialist-transport/images/wav-side-view.jpg", alt: "Wheelchair accessible minibus" },
+      { src: "/specialist-transport/images/wav-ramp-deployed.jpg", alt: "WAV with ramp deployed" },
+    ],
   },
   {
     id: "care",
@@ -87,6 +95,10 @@ const services = [
     ],
     highlight:
       "Our staff are trained in safeguarding, manual handling awareness, and vulnerable person support, ensuring a respectful and caring experience.",
+    images: [
+      { src: "/specialist-transport/images/fleet-other-side-2.jpg", alt: "Patient transport vehicle" },
+      { src: "/specialist-transport/images/wav-interior-ramp.jpg", alt: "Accessible vehicle interior" },
+    ],
   },
   {
     id: "hospital",
@@ -109,6 +121,10 @@ const services = [
     ],
     highlight:
       "Our focus is on ensuring safe, timely, and comfortable transfers that support continuity of care and patient wellbeing.",
+    images: [
+      { src: "/specialist-transport/images/wav-rear-open.jpg", alt: "Vehicle with rear access open" },
+      { src: "/specialist-transport/images/fleet-front-view-2.jpg", alt: "Fleet vehicle front view" },
+    ],
   },
 ];
 
@@ -163,20 +179,36 @@ export default function ServicesPage() {
                 </div>
               </div>
 
-              {/* Features List */}
-              <div className={`bg-bg-white rounded-2xl p-8 border border-border-light shadow-soft ${index % 2 === 1 ? "lg:order-1" : ""}`}>
-                <h3 className="text-lg font-bold text-text-dark mb-6 flex items-center gap-3">
-                  <FileCheck className={`w-5 h-5 ${service.color}`} />
-                  What&apos;s Included
-                </h3>
-                <ul className="space-y-4">
-                  {service.features.map((feature) => (
-                    <li key={feature} className="flex items-start gap-3">
-                      <CheckCircle className={`w-5 h-5 ${service.color} mt-0.5 shrink-0`} />
-                      <span className="text-text-body text-sm">{feature}</span>
-                    </li>
+              {/* Images + Features */}
+              <div className={`space-y-6 ${index % 2 === 1 ? "lg:order-1" : ""}`}>
+                {/* Vehicle Images */}
+                <div className="grid grid-cols-2 gap-4">
+                  {service.images.map((img) => (
+                    <div key={img.src} className="rounded-2xl overflow-hidden border border-border-light shadow-soft">
+                      <img
+                        src={img.src}
+                        alt={img.alt}
+                        className="w-full aspect-[4/3] object-cover hover:scale-105 transition-transform duration-500"
+                      />
+                    </div>
                   ))}
-                </ul>
+                </div>
+
+                {/* Features List */}
+                <div className="bg-bg-white rounded-2xl p-8 border border-border-light shadow-soft">
+                  <h3 className="text-lg font-bold text-text-dark mb-6 flex items-center gap-3">
+                    <FileCheck className={`w-5 h-5 ${service.color}`} />
+                    What&apos;s Included
+                  </h3>
+                  <ul className="space-y-4">
+                    {service.features.map((feature) => (
+                      <li key={feature} className="flex items-start gap-3">
+                        <CheckCircle className={`w-5 h-5 ${service.color} mt-0.5 shrink-0`} />
+                        <span className="text-text-body text-sm">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             </div>
           ))}
