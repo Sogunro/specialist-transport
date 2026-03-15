@@ -13,7 +13,7 @@ import {
 } from "lucide-react";
 
 export const metadata = {
-  title: "About Us | SafeRide Specialist Transport",
+  title: "About Us | Connect Care Transportation Services",
   description:
     "Learn about our mission, values, and commitment to safe, reliable, and person-centred specialist transportation services.",
 };
@@ -74,13 +74,13 @@ const timeline = [
     year: "Founded",
     title: "Established with Purpose",
     description:
-      "SafeRide was founded with a clear mission: to provide safe, dignified, and professional transport for those who need it most.",
+      "Connect Care was founded with a clear mission: to provide safe, dignified, and professional transport for those who need it most.",
   },
   {
     year: "Growth",
     title: "Expanding Services",
     description:
-      "We expanded our fleet and services to include SEND transport, WAV transportation, hospital transfers, and comprehensive audit services.",
+      "We expanded our fleet and services to include SEND transport, WAV transportation, hospital transfers, and care home transport.",
   },
   {
     year: "Today",
@@ -256,14 +256,14 @@ export default function AboutPage() {
             </div>
             <div className="space-y-4">
               <div className="rounded-2xl overflow-hidden border border-border-light shadow-card">
-                <img src="/specialist-transport/images/trafic-other-side.jpg" alt="Fleet vehicle" className="w-full aspect-[16/10] object-cover" />
+                <img src="/specialist-transport/images/fleet-other-side-2.jpg" alt="Fleet vehicle" className="w-full aspect-[16/10] object-cover" />
               </div>
               <div className="grid grid-cols-2 gap-4">
                 <div className="rounded-xl overflow-hidden border border-border-light shadow-soft">
-                  <img src="/specialist-transport/images/trafic-front-view.jpg" alt="Renault Trafic front" className="w-full aspect-square object-cover" />
+                  <img src="/specialist-transport/images/fleet-front-view-2.jpg" alt="Fleet vehicle front" className="w-full aspect-square object-cover" />
                 </div>
                 <div className="rounded-xl overflow-hidden border border-border-light shadow-soft">
-                  <img src="/specialist-transport/images/trafic-rear-view.jpg" alt="Vehicle rear with child transport sign" className="w-full aspect-square object-cover" />
+                  <img src="/specialist-transport/images/fleet-rear-view-2.jpg" alt="Vehicle rear with child transport sign" className="w-full aspect-square object-cover" />
                 </div>
               </div>
             </div>
@@ -271,7 +271,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-            {/* CTA */}
+      {/* CTA */}
       <section className="py-20 bg-bg-warm">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-text-dark mb-4">

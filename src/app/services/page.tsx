@@ -1,7 +1,6 @@
 import Link from "next/link";
 import {
-  GraduationCap,
-  ClipboardCheck,
+  Bus,
   Accessibility,
   Heart,
   Hospital,
@@ -12,24 +11,24 @@ import {
   FileCheck,
   AlertTriangle,
   Stethoscope,
-  Bus,
+  GraduationCap,
 } from "lucide-react";
 
 export const metadata = {
-  title: "Our Services | SafeRide Specialist Transport",
+  title: "Our Services | Connect Care Transportation Services",
   description:
-    "Specialist transportation services including SEND school transport, wheelchair accessible vehicles, care home transport, hospital transfers, and transport audit services.",
+    "Specialist transportation services including SEND school transport, wheelchair accessible vehicles, care home transport, and hospital transfers.",
 };
 
 const services = [
   {
     id: "send",
-    icon: GraduationCap,
+    icon: Bus,
     title: "SEND School Transport",
     subtitle: "Transportation of SEND Children",
-    color: "text-blue-soft",
-    bg: "bg-blue-50",
-    borderColor: "border-blue-200",
+    color: "text-yellow-500",
+    bg: "bg-yellow-50",
+    borderColor: "border-yellow-200",
     description:
       "We deliver dedicated home-to-school and school-to-home transportation services for children and young people with Special Educational Needs and Disabilities (SEND). Our service is designed to support consistent school attendance while addressing each child\u2019s unique physical, behavioural, emotional, and developmental needs.",
     features: [
@@ -44,28 +43,6 @@ const services = [
     ],
     highlight:
       "We prioritise the safety, dignity, and wellbeing of every child, ensuring they are transported in a calm, supportive, and secure environment.",
-  },
-  {
-    id: "audit",
-    icon: ClipboardCheck,
-    title: "Transport Audit & Compliance",
-    subtitle: "Independent Audit Services",
-    color: "text-amber-600",
-    bg: "bg-amber-50",
-    borderColor: "border-amber-200",
-    description:
-      "We provide independent transport audit and compliance services to ensure transport operations meet regulatory, contractual, and safeguarding standards. Our audit services help organisations improve service quality, safety, and operational efficiency.",
-    features: [
-      "Vehicle compliance inspections \u2014 safety, accessibility, and maintenance records",
-      "Driver compliance checks \u2014 licensing, DBS, training, and competency records",
-      "Safeguarding compliance review and operational risk assessment",
-      "Evaluation of transport policies, procedures, and operational systems",
-      "Identification of risks, service gaps, and improvement opportunities",
-      "Recommendations to improve safety, efficiency, and regulatory compliance",
-      "Support for local authorities, schools, and care organisations",
-    ],
-    highlight:
-      "These audits support local authorities, schools, and care providers in maintaining high-quality, compliant transport services.",
   },
   {
     id: "wav",
@@ -223,10 +200,10 @@ export default function ServicesPage() {
               { src: "/specialist-transport/images/wav-rear-open.jpg", alt: "Rear access wheelchair lift" },
               { src: "/specialist-transport/images/wav-ramp-deployed.jpg", alt: "Wheelchair ramp deployed" },
               { src: "/specialist-transport/images/wav-interior-ramp.jpg", alt: "Interior with safety rails" },
-              { src: "/specialist-transport/images/trafic-side-view.jpg", alt: "Renault Trafic patient transport" },
-              { src: "/specialist-transport/images/trafic-front-view.jpg", alt: "Renault Trafic front view" },
-              { src: "/specialist-transport/images/trafic-other-side.jpg", alt: "Fleet vehicle other side" },
-              { src: "/specialist-transport/images/trafic-rear-view.jpg", alt: "Rear view with child transport sign" },
+              { src: "/specialist-transport/images/fleet-side-view-2.jpg", alt: "Private hire vehicle" },
+              { src: "/specialist-transport/images/fleet-front-view-2.jpg", alt: "Fleet vehicle front view" },
+              { src: "/specialist-transport/images/fleet-other-side-2.jpg", alt: "Fleet vehicle other side" },
+              { src: "/specialist-transport/images/fleet-rear-view-2.jpg", alt: "Rear view with child transport sign" },
             ].map((img) => (
               <div key={img.src} className="rounded-xl overflow-hidden border border-border-light shadow-soft group">
                 <img
@@ -240,7 +217,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-            {/* Safety Section */}
+      {/* Safety Section */}
       <section className="py-20 bg-bg-white border-t border-border-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">

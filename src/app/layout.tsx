@@ -10,7 +10,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "SafeRide Specialist Transport | Safe, Reliable, Person-Centred",
+  title: "Connect Care Transportation Services | Safe, Reliable, Person-Centred",
   description:
     "Specialist transportation services for SEND children, wheelchair users, elderly care, hospital transfers, and vulnerable individuals. Fully compliant, compassionate, and professional.",
   keywords: [

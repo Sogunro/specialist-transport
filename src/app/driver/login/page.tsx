@@ -22,16 +22,15 @@ export default function DriverLoginPage() {
         {/* Logo */}
         <div className="text-center mb-8">
           <Link href="/" className="inline-flex items-center gap-3 mb-6">
-            <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center">
-              <Bus className="w-7 h-7 text-white" />
-            </div>
-            <div className="text-left">
-              <span className="text-2xl font-bold text-text-dark">SafeRide</span>
-              <span className="block text-[10px] uppercase tracking-[0.2em] text-blue-soft font-semibold">
-                Driver Portal
-              </span>
-            </div>
+            <img
+              src="/specialist-transport/images/logo.svg"
+              alt="Connect Care Transportation Services"
+              className="h-12 w-auto"
+            />
           </Link>
+          <p className="text-[10px] uppercase tracking-[0.2em] text-blue-soft font-semibold mb-2">
+            Driver Portal
+          </p>
           <h1 className="text-3xl font-bold text-text-dark mb-2">Welcome back</h1>
           <p className="text-text-light">Sign in to your driver account</p>
         </div>

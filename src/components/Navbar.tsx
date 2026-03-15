@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Menu, X, Bus, Phone, ChevronDown } from "lucide-react";
+import { Menu, X, Phone, ChevronDown } from "lucide-react";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,17 +14,11 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center">
-              <Bus className="w-5 h-5 text-white" />
-            </div>
-            <div>
-              <span className="text-xl font-bold text-text-dark tracking-tight">
-                SafeRide
-              </span>
-              <span className="block text-[10px] uppercase tracking-[0.2em] text-blue-soft font-semibold">
-                Specialist Transport
-              </span>
-            </div>
+            <img
+              src="/specialist-transport/images/logo.svg"
+              alt="Connect Care Transportation Services"
+              className="h-12 w-auto"
+            />
           </Link>
 
           {/* Desktop Nav */}

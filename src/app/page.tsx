@@ -1,7 +1,9 @@
+"use client";
+
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import {
-  GraduationCap,
-  ClipboardCheck,
+  Bus,
   Accessibility,
   Heart,
   Hospital,
@@ -17,24 +19,18 @@ import {
   UserCheck,
   Smile,
   PoundSterling,
+  ChevronLeft,
+  ChevronRight,
 } from "lucide-react";
 
 const services = [
   {
-    icon: GraduationCap,
+    icon: Bus,
     title: "SEND School Transport",
     description:
       "Safe home-to-school transport for children with Special Educational Needs and Disabilities. Trained, consistent staff every journey.",
-    color: "text-blue-soft",
-    bg: "bg-blue-50",
-  },
-  {
-    icon: ClipboardCheck,
-    title: "Transport Audit & Compliance",
-    description:
-      "Independent audits ensuring regulatory, safeguarding, and contractual compliance for transport operations.",
-    color: "text-amber-600",
-    bg: "bg-amber-50",
+    color: "text-yellow-500",
+    bg: "bg-yellow-50",
   },
   {
     icon: Accessibility,
@@ -94,10 +90,28 @@ const commitments = [
   "Full compliance with local authority and NHS standards",
 ];
 
+const heroMedia = [
+  { type: "image" as const, src: "/specialist-transport/images/wav-side-view.jpg", alt: "WAV minibus side view" },
+  { type: "image" as const, src: "/specialist-transport/images/fleet-side-view-2.jpg", alt: "Private hire vehicle side view" },
+  { type: "image" as const, src: "/specialist-transport/images/fleet-front-view-2.jpg", alt: "Fleet vehicle front view" },
+  { type: "image" as const, src: "/specialist-transport/images/fleet-other-side-2.jpg", alt: "Fleet vehicle other side" },
+  { type: "video" as const, src: "/specialist-transport/videos/fleet-video-1.mp4", poster: "/specialist-transport/images/wav-side-view.jpg" },
+  { type: "video" as const, src: "/specialist-transport/videos/fleet-video-2.mp4", poster: "/specialist-transport/images/trafic-front-view.jpg" },
+];
+
 export default function Home() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % heroMedia.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <>
-      {/* Hero Section — Elder style */}
+      {/* Hero Section */}
       <section className="relative bg-bg-white pt-28 pb-16 md:pt-32 md:pb-24 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -120,7 +134,7 @@ export default function Home() {
 
               <div className="flex flex-col sm:flex-row gap-4 pt-2">
                 <Link
-                  href="/contact"
+                  href="/services"
                   className="px-8 py-3.5 bg-accent text-white font-semibold rounded-full hover:bg-accent-hover transition-all btn-primary text-center"
                 >
                   Find your service
@@ -152,14 +166,60 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Right — Vehicle Image */}
+            {/* Right — Media Gallery/Carousel */}
             <div className="relative animate-fade-in-up animate-delay-200">
-              <div className="relative rounded-3xl overflow-hidden shadow-card">
-                <img
-                  src="/specialist-transport/images/wav-side-view.jpg"
-                  alt="SafeRide wheelchair accessible minibus"
-                  className="w-full h-full object-cover aspect-[4/3]"
-                />
+              <div className="relative rounded-3xl overflow-hidden shadow-card aspect-[4/3]">
+                {heroMedia.map((media, index) => (
+                  <div
+                    key={index}
+                    className={`absolute inset-0 transition-opacity duration-700 ${
+                      index === currentSlide ? "opacity-100" : "opacity-0 pointer-events-none"
+                    }`}
+                  >
+                    {media.type === "image" ? (
+                      <img
+                        src={media.src}
+                        alt={media.alt}
+                        className="w-full h-full object-cover"
+                      />
+                    ) : (
+                      <video
+                        src={media.src}
+                        poster={media.poster}
+                        className="w-full h-full object-cover"
+                        muted
+                        autoPlay={index === currentSlide}
+                        loop
+                        playsInline
+                      />
+                    )}
+                  </div>
+                ))}
+                {/* Navigation arrows */}
+                <button
+                  onClick={() => setCurrentSlide((prev) => (prev - 1 + heroMedia.length) % heroMedia.length)}
+                  className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/80 rounded-full flex items-center justify-center hover:bg-white transition-all shadow-md"
+                >
+                  <ChevronLeft className="w-5 h-5 text-text-dark" />
+                </button>
+                <button
+                  onClick={() => setCurrentSlide((prev) => (prev + 1) % heroMedia.length)}
+                  className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/80 rounded-full flex items-center justify-center hover:bg-white transition-all shadow-md"
+                >
+                  <ChevronRight className="w-5 h-5 text-text-dark" />
+                </button>
+                {/* Dots */}
+                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+                  {heroMedia.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setCurrentSlide(index)}
+                      className={`w-2.5 h-2.5 rounded-full transition-all ${
+                        index === currentSlide ? "bg-white w-6" : "bg-white/50"
+                      }`}
+                    />
+                  ))}
+                </div>
               </div>
               {/* Decorative shape */}
               <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-accent/10 rounded-full blur-2xl" />
@@ -169,7 +229,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Highlights Bar — like Elder's bottom cards */}
+      {/* Highlights Bar */}
       <section className="bg-bg-white border-t border-border-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -209,14 +269,12 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((service, i) => (
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {services.map((service) => (
               <Link
                 href="/services"
                 key={service.title}
-                className={`bg-bg-white rounded-2xl p-8 border border-border-light card-hover group ${
-                  i === 4 ? "md:col-span-2 lg:col-span-1" : ""
-                }`}
+                className="bg-bg-white rounded-2xl p-8 border border-border-light card-hover group"
               >
                 <div
                   className={`w-14 h-14 ${service.bg} rounded-2xl flex items-center justify-center mb-5 group-hover:scale-105 transition-transform`}
@@ -366,9 +424,9 @@ export default function Home() {
               { src: "/specialist-transport/images/wav-side-view.jpg", alt: "WAV minibus side view", label: "Wheelchair Accessible Minibus" },
               { src: "/specialist-transport/images/wav-rear-open.jpg", alt: "WAV rear doors open showing wheelchair lift", label: "Rear Access & Wheelchair Lift" },
               { src: "/specialist-transport/images/wav-ramp-deployed.jpg", alt: "WAV with ramp deployed", label: "Ramp Deployed for Easy Access" },
-              { src: "/specialist-transport/images/wav-interior-ramp.jpg", alt: "WAV interior with wheelchair tracks", label: "Spacious Interior with Safety Rails" },
-              { src: "/specialist-transport/images/trafic-side-view.jpg", alt: "Renault Trafic minibus", label: "Renault Trafic Patient Transport" },
-              { src: "/specialist-transport/images/trafic-rear-view.jpg", alt: "Renault Trafic rear view with child transport sign", label: "Safety Signage & Compliance" },
+              { src: "/specialist-transport/images/fleet-side-view-2.jpg", alt: "Private hire vehicle", label: "Private Hire Patient Transport" },
+              { src: "/specialist-transport/images/fleet-other-side-2.jpg", alt: "Fleet vehicle other side", label: "Fleet Vehicle" },
+              { src: "/specialist-transport/images/fleet-rear-view-2.jpg", alt: "Fleet vehicle rear view with child transport sign", label: "Safety Signage & Compliance" },
             ].map((img) => (
               <div key={img.src} className="group rounded-2xl overflow-hidden border border-border-light shadow-soft card-hover">
                 <div className="aspect-[4/3] overflow-hidden">
@@ -416,7 +474,7 @@ export default function Home() {
         </div>
       </section>
 
-            {/* Mission Section */}
+      {/* Mission Section */}
       <section className="py-20 md:py-24 bg-bg-warm">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-blue-soft font-semibold text-sm uppercase tracking-wider mb-3">
@@ -476,8 +534,8 @@ export default function Home() {
               <div className="hidden lg:flex items-center justify-center">
                 <div className="rounded-2xl overflow-hidden shadow-card">
                   <img
-                    src="/specialist-transport/images/trafic-side-view.jpg"
-                    alt="Renault Trafic minibus fleet vehicle"
+                    src="/specialist-transport/images/fleet-side-view-2.jpg"
+                    alt="Connect Care fleet vehicle"
                     className="w-full h-auto object-cover rounded-2xl"
                   />
                 </div>

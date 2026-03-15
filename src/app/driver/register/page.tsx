@@ -5,7 +5,7 @@ import Link from "next/link";
 import {
   User,
   Car,
-  FileText,
+  Settings,
   CheckCircle,
   ArrowRight,
   ArrowLeft,
@@ -15,7 +15,7 @@ import {
 const steps = [
   { id: 1, title: "Personal Info", icon: User },
   { id: 2, title: "Driving Details", icon: Car },
-  { id: 3, title: "Documents", icon: FileText },
+  { id: 3, title: "Options", icon: Settings },
   { id: 4, title: "Review", icon: CheckCircle },
 ];
 
@@ -23,8 +23,8 @@ export default function DriverRegisterPage() {
   const [currentStep, setCurrentStep] = useState(1);
   const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState({
-    firstName: "", lastName: "", email: "", phone: "", address: "", city: "", postcode: "", dateOfBirth: "",
-    licenceNumber: "", licenceExpiry: "", licenceCategories: "", yearsExperience: "", vehicleType: "", hasDBS: "", dbsNumber: "", availability: "",
+    firstName: "", lastName: "", email: "", phone: "", address: "", city: "", postcode: "",
+    licenceType: "", yearsExperience: "", vehicleType: "", hasDBS: "", dbsNumber: "", availability: "",
     hasSENDTraining: false, hasSafeguardingTraining: false, hasFirstAid: false, hasManualHandling: false, hasPATS: false,
     previousEmployer: "", whyJoin: "",
     agreeToCriminalCheck: false, agreeToTerms: false,
@@ -53,7 +53,7 @@ export default function DriverRegisterPage() {
             </div>
             <h1 className="text-3xl font-bold text-text-dark mb-4">Application Submitted!</h1>
             <p className="text-text-body text-lg mb-8 leading-relaxed">
-              Thank you for your interest in joining SafeRide. We will review your
+              Thank you for your interest in joining Connect Care. We will review your
               application and contact you within 3-5 business days.
             </p>
             <div className="bg-bg rounded-xl p-5 mb-8 text-left border border-border-light">
@@ -128,55 +128,56 @@ export default function DriverRegisterPage() {
           <form onSubmit={handleSubmit}>
             <div className="bg-bg-white rounded-3xl p-8 md:p-10 border border-border-light shadow-card">
 
-              {/* Step 1 */}
+              {/* Step 1 - Personal Info */}
               {currentStep === 1 && (
                 <div className="space-y-6 animate-fade-in-up">
                   <h2 className="text-xl font-bold text-text-dark mb-6 flex items-center gap-3">
                     <User className="w-5 h-5 text-blue-soft" /> Personal Information
                   </h2>
                   <div className="grid sm:grid-cols-2 gap-6">
-                    <div><label className={labelClass}>First Name *</label><input type="text" required value={formData.firstName} onChange={(e) => updateField("firstName", e.target.value)} className={inputClass} placeholder="First name" /></div>
-                    <div><label className={labelClass}>Last Name *</label><input type="text" required value={formData.lastName} onChange={(e) => updateField("lastName", e.target.value)} className={inputClass} placeholder="Last name" /></div>
+                    <div><label className={labelClass}>First Name</label><input type="text" value={formData.firstName} onChange={(e) => updateField("firstName", e.target.value)} className={inputClass} placeholder="First name" /></div>
+                    <div><label className={labelClass}>Last Name</label><input type="text" value={formData.lastName} onChange={(e) => updateField("lastName", e.target.value)} className={inputClass} placeholder="Last name" /></div>
                   </div>
                   <div className="grid sm:grid-cols-2 gap-6">
-                    <div><label className={labelClass}>Email *</label><input type="email" required value={formData.email} onChange={(e) => updateField("email", e.target.value)} className={inputClass} placeholder="your@email.com" /></div>
-                    <div><label className={labelClass}>Phone *</label><input type="tel" required value={formData.phone} onChange={(e) => updateField("phone", e.target.value)} className={inputClass} placeholder="Phone number" /></div>
+                    <div><label className={labelClass}>Email</label><input type="email" value={formData.email} onChange={(e) => updateField("email", e.target.value)} className={inputClass} placeholder="your@email.com" /></div>
+                    <div><label className={labelClass}>Phone</label><input type="tel" value={formData.phone} onChange={(e) => updateField("phone", e.target.value)} className={inputClass} placeholder="Phone number" /></div>
                   </div>
-                  <div><label className={labelClass}>Date of Birth *</label><input type="date" required value={formData.dateOfBirth} onChange={(e) => updateField("dateOfBirth", e.target.value)} className={inputClass} /></div>
-                  <div><label className={labelClass}>Address *</label><input type="text" required value={formData.address} onChange={(e) => updateField("address", e.target.value)} className={inputClass} placeholder="Street address" /></div>
+                  <div><label className={labelClass}>Address</label><input type="text" value={formData.address} onChange={(e) => updateField("address", e.target.value)} className={inputClass} placeholder="Street address" /></div>
                   <div className="grid sm:grid-cols-2 gap-6">
-                    <div><label className={labelClass}>City *</label><input type="text" required value={formData.city} onChange={(e) => updateField("city", e.target.value)} className={inputClass} placeholder="City" /></div>
-                    <div><label className={labelClass}>Postcode *</label><input type="text" required value={formData.postcode} onChange={(e) => updateField("postcode", e.target.value)} className={inputClass} placeholder="Postcode" /></div>
+                    <div><label className={labelClass}>City</label><input type="text" value={formData.city} onChange={(e) => updateField("city", e.target.value)} className={inputClass} placeholder="City" /></div>
+                    <div><label className={labelClass}>Postcode</label><input type="text" value={formData.postcode} onChange={(e) => updateField("postcode", e.target.value)} className={inputClass} placeholder="Postcode" /></div>
                   </div>
                 </div>
               )}
 
-              {/* Step 2 */}
+              {/* Step 2 - Driving Details */}
               {currentStep === 2 && (
                 <div className="space-y-6 animate-fade-in-up">
                   <h2 className="text-xl font-bold text-text-dark mb-6 flex items-center gap-3">
                     <Car className="w-5 h-5 text-blue-soft" /> Driving Details
                   </h2>
-                  <div className="grid sm:grid-cols-2 gap-6">
-                    <div><label className={labelClass}>Licence Number *</label><input type="text" required value={formData.licenceNumber} onChange={(e) => updateField("licenceNumber", e.target.value)} className={inputClass} placeholder="Licence number" /></div>
-                    <div><label className={labelClass}>Licence Expiry *</label><input type="date" required value={formData.licenceExpiry} onChange={(e) => updateField("licenceExpiry", e.target.value)} className={inputClass} /></div>
-                  </div>
-                  <div className="grid sm:grid-cols-2 gap-6">
-                    <div><label className={labelClass}>Licence Categories *</label><input type="text" required value={formData.licenceCategories} onChange={(e) => updateField("licenceCategories", e.target.value)} className={inputClass} placeholder="e.g. B, D1, D" /></div>
-                    <div>
-                      <label className={labelClass}>Experience *</label>
-                      <select required value={formData.yearsExperience} onChange={(e) => updateField("yearsExperience", e.target.value)} className={selectClass}>
-                        <option value="">Select</option>
-                        <option value="1-2">1-2 years</option>
-                        <option value="3-5">3-5 years</option>
-                        <option value="5-10">5-10 years</option>
-                        <option value="10+">10+ years</option>
-                      </select>
-                    </div>
+                  <div>
+                    <label className={labelClass}>Type of Licence</label>
+                    <select value={formData.licenceType} onChange={(e) => updateField("licenceType", e.target.value)} className={selectClass}>
+                      <option value="">Select licence type</option>
+                      <option value="taxi">Taxi Licence</option>
+                      <option value="pcv">PCV Licence</option>
+                      <option value="normal">Normal Driving Licence</option>
+                    </select>
                   </div>
                   <div>
-                    <label className={labelClass}>Preferred Vehicle *</label>
-                    <select required value={formData.vehicleType} onChange={(e) => updateField("vehicleType", e.target.value)} className={selectClass}>
+                    <label className={labelClass}>Experience</label>
+                    <select value={formData.yearsExperience} onChange={(e) => updateField("yearsExperience", e.target.value)} className={selectClass}>
+                      <option value="">Select</option>
+                      <option value="1-2">1-2 years</option>
+                      <option value="3-5">3-5 years</option>
+                      <option value="5-10">5-10 years</option>
+                      <option value="10+">10+ years</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label className={labelClass}>Preferred Vehicle</label>
+                    <select value={formData.vehicleType} onChange={(e) => updateField("vehicleType", e.target.value)} className={selectClass}>
                       <option value="">Select vehicle type</option>
                       <option value="car">Car / MPV</option>
                       <option value="minibus">Minibus</option>
@@ -185,8 +186,8 @@ export default function DriverRegisterPage() {
                     </select>
                   </div>
                   <div>
-                    <label className={labelClass}>Enhanced DBS? *</label>
-                    <select required value={formData.hasDBS} onChange={(e) => updateField("hasDBS", e.target.value)} className={selectClass}>
+                    <label className={labelClass}>Enhanced DBS?</label>
+                    <select value={formData.hasDBS} onChange={(e) => updateField("hasDBS", e.target.value)} className={selectClass}>
                       <option value="">Select</option>
                       <option value="yes">Yes - current and valid</option>
                       <option value="expired">Yes - but expired</option>
@@ -197,8 +198,8 @@ export default function DriverRegisterPage() {
                     <div><label className={labelClass}>DBS Certificate Number</label><input type="text" value={formData.dbsNumber} onChange={(e) => updateField("dbsNumber", e.target.value)} className={inputClass} placeholder="DBS certificate number" /></div>
                   )}
                   <div>
-                    <label className={labelClass}>Availability *</label>
-                    <select required value={formData.availability} onChange={(e) => updateField("availability", e.target.value)} className={selectClass}>
+                    <label className={labelClass}>Availability</label>
+                    <select value={formData.availability} onChange={(e) => updateField("availability", e.target.value)} className={selectClass}>
                       <option value="">Select availability</option>
                       <option value="fulltime">Full-time</option>
                       <option value="parttime">Part-time</option>
@@ -209,11 +210,11 @@ export default function DriverRegisterPage() {
                 </div>
               )}
 
-              {/* Step 3 */}
+              {/* Step 3 - Options */}
               {currentStep === 3 && (
                 <div className="space-y-6 animate-fade-in-up">
                   <h2 className="text-xl font-bold text-text-dark mb-6 flex items-center gap-3">
-                    <FileText className="w-5 h-5 text-blue-soft" /> Training & Documents
+                    <Settings className="w-5 h-5 text-blue-soft" /> Options
                   </h2>
                   <div>
                     <label className="block text-sm font-medium text-text-dark mb-4">
@@ -244,11 +245,11 @@ export default function DriverRegisterPage() {
                     </div>
                   </div>
                   <div><label className={labelClass}>Previous Transport Experience</label><textarea rows={3} value={formData.previousEmployer} onChange={(e) => updateField("previousEmployer", e.target.value)} className={inputClass + " resize-none"} placeholder="Brief details of previous roles..." /></div>
-                  <div><label className={labelClass}>Why join SafeRide?</label><textarea rows={3} value={formData.whyJoin} onChange={(e) => updateField("whyJoin", e.target.value)} className={inputClass + " resize-none"} placeholder="Tell us what motivates you..." /></div>
+                  <div><label className={labelClass}>Why join Connect Care?</label><textarea rows={3} value={formData.whyJoin} onChange={(e) => updateField("whyJoin", e.target.value)} className={inputClass + " resize-none"} placeholder="Tell us what motivates you..." /></div>
                 </div>
               )}
 
-              {/* Step 4 */}
+              {/* Step 4 - Review */}
               {currentStep === 4 && (
                 <div className="space-y-6 animate-fade-in-up">
                   <h2 className="text-xl font-bold text-text-dark mb-6 flex items-center gap-3">
@@ -267,9 +268,9 @@ export default function DriverRegisterPage() {
                     <div className="bg-bg rounded-xl p-5 border border-border-light">
                       <h3 className="text-sm font-semibold text-blue-soft uppercase tracking-wider mb-3">Driving Details</h3>
                       <div className="grid sm:grid-cols-2 gap-2 text-sm">
-                        <div><span className="text-text-light">Licence: </span><span className="text-text-dark font-medium">{formData.licenceNumber}</span></div>
-                        <div><span className="text-text-light">Categories: </span><span className="text-text-dark font-medium">{formData.licenceCategories}</span></div>
+                        <div><span className="text-text-light">Licence Type: </span><span className="text-text-dark font-medium">{formData.licenceType}</span></div>
                         <div><span className="text-text-light">Experience: </span><span className="text-text-dark font-medium">{formData.yearsExperience} years</span></div>
+                        <div><span className="text-text-light">Preferred Vehicle: </span><span className="text-text-dark font-medium">{formData.vehicleType}</span></div>
                         <div><span className="text-text-light">DBS: </span><span className="text-text-dark font-medium">{formData.hasDBS}</span></div>
                       </div>
                     </div>

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Bus, Phone, Mail, MapPin, Facebook, Linkedin, Twitter } from "lucide-react";
+import { Phone, Mail, MapPin, Facebook, Linkedin, Twitter } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -38,15 +38,11 @@ export default function Footer() {
             {/* Brand */}
             <div>
               <Link href="/" className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center">
-                  <Bus className="w-5 h-5 text-white" />
-                </div>
-                <div>
-                  <span className="text-lg font-bold text-text-dark">SafeRide</span>
-                  <span className="block text-[10px] uppercase tracking-[0.2em] text-blue-soft font-semibold">
-                    Specialist Transport
-                  </span>
-                </div>
+                <img
+                  src="/specialist-transport/images/logo.svg"
+                  alt="Connect Care Transportation Services"
+                  className="h-10 w-auto"
+                />
               </Link>
               <p className="text-text-light text-sm leading-relaxed">
                 Safe, reliable, and person-centred specialist transportation services
@@ -62,7 +58,6 @@ export default function Footer() {
               <ul className="space-y-3">
                 {[
                   "SEND School Transport",
-                  "Transport Audit & Compliance",
                   "WAV Transportation",
                   "Care Home Transport",
                   "Hospital Transfers",
@@ -119,7 +114,7 @@ export default function Footer() {
                 </li>
                 <li className="flex items-start gap-3">
                   <MapPin className="w-4 h-4 text-blue-soft mt-0.5 shrink-0" />
-                  <span className="text-text-light text-sm">St. James's House, Suite 12, 6th Floor, Pendleton Way, Salford, M6 5FW</span>
+                  <span className="text-text-light text-sm">St. James&apos;s House, Suite 12, 6th Floor, Pendleton Way, Salford, M6 5FW</span>
                 </li>
               </ul>
               <div className="flex gap-3 mt-6">
@@ -142,7 +137,7 @@ export default function Footer() {
       <div className="border-t border-border-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-text-muted text-xs">
-            &copy; {new Date().getFullYear()} SafeRide Specialist Transport. All rights reserved.
+            &copy; {new Date().getFullYear()} Connect Care Transportation Services. All rights reserved.
           </p>
           <div className="flex gap-6">
             {["Privacy Policy", "Terms of Service", "Cookie Policy"].map((text) => (
