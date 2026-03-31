@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { IMAGES } from "@/lib/constants";
+import type { Value, TimelineEntry } from "@/lib/types";
 import {
   Shield,
   Heart,
@@ -18,14 +20,14 @@ export const metadata = {
     "Learn about Connect Care's mission, values, and commitment to safe, reliable, and person-centred transportation services.",
 };
 
-const values = [
+const values: Value[] = [
   {
     icon: Shield,
     title: "Safety First",
     description:
       "Every decision prioritises the safety and wellbeing of the individuals we serve.",
     bg: "bg-blue-50",
-    color: "text-blue-soft",
+    color: "text-trust",
   },
   {
     icon: Heart,
@@ -69,7 +71,7 @@ const values = [
   },
 ];
 
-const timeline = [
+const timeline: TimelineEntry[] = [
   {
     year: "Founded",
     title: "Established with Purpose",
@@ -94,17 +96,17 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-bg-white pt-28 pb-16 md:pt-32 md:pb-20 border-b border-border-light">
+      <section className="page-hero">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <p className="text-blue-soft font-semibold text-sm uppercase tracking-wider mb-3 animate-fade-in-up">
+              <p className="text-trust font-semibold text-sm uppercase tracking-wider mb-3 animate-fade-in-up">
                 About Us
               </p>
-              <h1 className="text-4xl md:text-5xl font-bold text-text-dark mb-6 animate-fade-in-up animate-delay-100">
+              <h1 className="text-4xl md:text-5xl font-bold text-content-primary mb-6 animate-fade-in-up animate-delay-100">
                 Driven by compassion
               </h1>
-              <p className="text-xl text-text-body leading-relaxed animate-fade-in-up animate-delay-200">
+              <p className="text-xl text-content-secondary leading-relaxed animate-fade-in-up animate-delay-200">
                 Connect Care is a transportation provider dedicated to serving
                 vulnerable individuals, healthcare providers, educational institutions,
                 and local authorities with safe, reliable, and person-centred services.
@@ -121,11 +123,11 @@ export default function AboutPage() {
               ].map((stat) => (
                 <div
                   key={stat.label}
-                  className="bg-bg rounded-2xl p-6 text-center border border-border-light card-hover"
+                  className="bg-surface rounded-2xl p-6 text-center border border-edge-light card-hover"
                 >
-                  <stat.icon className="w-7 h-7 text-blue-soft mx-auto mb-3" />
-                  <div className="text-3xl font-bold text-text-dark">{stat.value}</div>
-                  <div className="text-sm text-text-light mt-1">{stat.label}</div>
+                  <stat.icon className="w-7 h-7 text-trust mx-auto mb-3" />
+                  <div className="text-3xl font-bold text-content-primary">{stat.value}</div>
+                  <div className="text-sm text-content-tertiary mt-1">{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -134,15 +136,15 @@ export default function AboutPage() {
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-20 bg-bg">
+      <section className="py-20 bg-surface">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-bg-white rounded-2xl p-8 md:p-10 border border-border-light card-hover">
+            <div className="bg-surface-white rounded-2xl p-8 md:p-10 border border-edge-light card-hover">
               <div className="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center mb-6">
-                <Target className="w-7 h-7 text-blue-soft" />
+                <Target className="w-7 h-7 text-trust" />
               </div>
-              <h2 className="text-2xl font-bold text-text-dark mb-4">Our Mission</h2>
-              <p className="text-text-body leading-relaxed">
+              <h2 className="text-2xl font-bold text-content-primary mb-4">Our Mission</h2>
+              <p className="text-content-secondary leading-relaxed">
                 To provide safe, dependable, and compassionate transportation
                 services that improve access to education, healthcare, and essential
                 services for vulnerable individuals, while supporting local authorities,
@@ -151,12 +153,12 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div className="bg-bg-white rounded-2xl p-8 md:p-10 border border-border-light card-hover">
+            <div className="bg-surface-white rounded-2xl p-8 md:p-10 border border-edge-light card-hover">
               <div className="w-14 h-14 bg-amber-50 rounded-2xl flex items-center justify-center mb-6">
                 <Eye className="w-7 h-7 text-amber-600" />
               </div>
-              <h2 className="text-2xl font-bold text-text-dark mb-4">Our Vision</h2>
-              <p className="text-text-body leading-relaxed">
+              <h2 className="text-2xl font-bold text-content-primary mb-4">Our Vision</h2>
+              <p className="text-content-secondary leading-relaxed">
                 To be the most trusted transport provider in the UK,
                 recognised for our unwavering commitment to safety, dignity, and
                 person-centred care. We envision a future where every vulnerable
@@ -168,16 +170,16 @@ export default function AboutPage() {
       </section>
 
       {/* Values */}
-      <section className="py-20 bg-bg-white border-t border-border-light">
+      <section className="py-20 bg-surface-white border-t border-edge-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <p className="text-blue-soft font-semibold text-sm uppercase tracking-wider mb-3">
+            <p className="text-trust font-semibold text-sm uppercase tracking-wider mb-3">
               Our Values
             </p>
-            <h2 className="text-3xl md:text-4xl font-bold text-text-dark mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-content-primary mb-4">
               What drives us
             </h2>
-            <p className="text-text-light max-w-2xl mx-auto text-lg">
+            <p className="text-content-tertiary max-w-2xl mx-auto text-lg">
               Our values are the foundation of everything we do.
             </p>
           </div>
@@ -186,15 +188,15 @@ export default function AboutPage() {
             {values.map((value) => (
               <div
                 key={value.title}
-                className="bg-bg rounded-2xl p-8 border border-border-light card-hover"
+                className="bg-surface rounded-2xl p-8 border border-edge-light card-hover"
               >
                 <div
                   className={`w-14 h-14 ${value.bg} rounded-2xl flex items-center justify-center mb-5`}
                 >
                   <value.icon className={`w-7 h-7 ${value.color}`} />
                 </div>
-                <h3 className="text-lg font-bold text-text-dark mb-2">{value.title}</h3>
-                <p className="text-text-light text-sm leading-relaxed">{value.description}</p>
+                <h3 className="text-lg font-bold text-content-primary mb-2">{value.title}</h3>
+                <p className="text-content-tertiary text-sm leading-relaxed">{value.description}</p>
               </div>
             ))}
           </div>
@@ -202,24 +204,24 @@ export default function AboutPage() {
       </section>
 
       {/* Timeline */}
-      <section className="py-20 bg-bg border-t border-border-light">
+      <section className="py-20 bg-surface border-t border-edge-light">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <h2 className="text-3xl md:text-4xl font-bold text-text-dark">Our Journey</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-content-primary">Our Journey</h2>
           </div>
 
           <div className="relative">
-            <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-soft via-accent to-blue-soft" />
+            <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-trust via-brand-gold to-trust" />
 
             <div className="space-y-10">
               {timeline.map((item) => (
                 <div key={item.year} className="relative flex gap-8">
-                  <div className="shrink-0 w-16 h-16 rounded-full bg-bg-white border-2 border-blue-soft flex items-center justify-center z-10 shadow-soft">
-                    <span className="text-xs font-bold text-blue-soft">{item.year}</span>
+                  <div className="shrink-0 w-16 h-16 rounded-full bg-surface-white border-2 border-trust flex items-center justify-center z-10 shadow-soft">
+                    <span className="text-xs font-bold text-trust">{item.year}</span>
                   </div>
-                  <div className="bg-bg-white rounded-2xl p-6 flex-1 border border-border-light shadow-soft">
-                    <h3 className="text-lg font-bold text-text-dark mb-2">{item.title}</h3>
-                    <p className="text-text-body leading-relaxed">{item.description}</p>
+                  <div className="bg-surface-white rounded-2xl p-6 flex-1 border border-edge-light shadow-soft">
+                    <h3 className="text-lg font-bold text-content-primary mb-2">{item.title}</h3>
+                    <p className="text-content-secondary leading-relaxed">{item.description}</p>
                   </div>
                 </div>
               ))}
@@ -229,41 +231,61 @@ export default function AboutPage() {
       </section>
 
       {/* Our Fleet */}
-      <section className="py-16 bg-bg-white border-t border-border-light">
+      <section className="py-16 bg-surface-white border-t border-edge-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <p className="text-blue-soft font-semibold text-sm uppercase tracking-wider mb-3">
+              <p className="text-trust font-semibold text-sm uppercase tracking-wider mb-3">
                 Our Fleet
               </p>
-              <h2 className="text-3xl font-bold text-text-dark mb-6">
+              <h2 className="text-3xl font-bold text-content-primary mb-6">
                 Purpose-built for safety and accessibility
               </h2>
-              <p className="text-text-body text-lg leading-relaxed mb-6">
+              <p className="text-content-secondary text-lg leading-relaxed mb-6">
                 Our fleet includes wheelchair accessible vehicles (WAVs) equipped with ramps,
                 lifts, and wheelchair restraints, alongside comfortable minibuses for patient
                 and school transport. Every vehicle is fully licensed, insured, and regularly
                 maintained to the highest standards.
               </p>
               <div className="grid grid-cols-2 gap-4">
-                <div className="rounded-xl overflow-hidden border border-border-light shadow-soft">
-                  <img src="/specialist-transport/images/wav-interior-ramp.jpg" alt="WAV interior with safety rails and wheelchair tracks" className="w-full aspect-[4/3] object-cover" />
+                <div className="rounded-xl overflow-hidden border border-edge-light shadow-soft">
+                  <img
+                    src={IMAGES.wavInteriorAccess}
+                    alt="WAV interior with safety rails and wheelchair tracks"
+                    className="w-full aspect-[4/3] object-cover"
+                  />
                 </div>
-                <div className="rounded-xl overflow-hidden border border-border-light shadow-soft">
-                  <img src="/specialist-transport/images/wav-ramp-deployed.jpg" alt="Wheelchair ramp deployed" className="w-full aspect-[4/3] object-cover" />
+                <div className="rounded-xl overflow-hidden border border-edge-light shadow-soft">
+                  <img
+                    src={IMAGES.wavRampYellow}
+                    alt="Wheelchair ramp deployed"
+                    className="w-full aspect-[4/3] object-cover"
+                  />
                 </div>
               </div>
             </div>
             <div className="space-y-4">
-              <div className="rounded-2xl overflow-hidden border border-border-light shadow-card">
-                <img src="/specialist-transport/images/fleet-other-side-2.jpg" alt="Fleet vehicle" className="w-full aspect-[16/10] object-cover" />
+              <div className="rounded-2xl overflow-hidden border border-edge-light shadow-card">
+                <img
+                  src={IMAGES.vanPrivateHire}
+                  alt="Fleet vehicle"
+                  className="w-full aspect-[16/10] object-cover"
+                />
               </div>
               <div className="grid grid-cols-2 gap-4">
-                <div className="rounded-xl overflow-hidden border border-border-light shadow-soft">
-                  <img src="/specialist-transport/images/fleet-front-view-2.jpg" alt="Fleet vehicle front" className="w-full aspect-square object-cover" />
+                <div className="rounded-xl overflow-hidden border border-edge-light shadow-soft">
+                  <img
+                    src={IMAGES.vanSilverSide}
+                    alt="Fleet vehicle side view"
+                    className="w-full aspect-square object-cover"
+                  />
                 </div>
-                <div className="rounded-xl overflow-hidden border border-border-light shadow-soft">
-                  <img src="/specialist-transport/images/fleet-rear-view-2.jpg" alt="Vehicle rear with child transport sign" className="w-full aspect-square object-cover" />
+                <div className="rounded-xl overflow-hidden border border-edge-light shadow-soft">
+                  <img
+                    src={IMAGES.wavRampAngle}
+                    alt="Vehicle rear with ramp"
+                    className="w-full aspect-square object-cover"
+                  />
                 </div>
               </div>
             </div>
@@ -272,25 +294,25 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-bg-warm">
+      <section className="py-20 bg-brand-gold-light">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-text-dark mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-content-primary mb-4">
             Want to work with us?
           </h2>
-          <p className="text-xl text-text-body mb-10 max-w-2xl mx-auto">
+          <p className="text-xl text-content-secondary mb-10 max-w-2xl mx-auto">
             Whether you need transport services or want to join our
             team, we would love to hear from you.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/contact"
-              className="px-8 py-3.5 bg-accent text-white font-bold rounded-full hover:bg-accent-hover transition-all btn-primary inline-flex items-center justify-center gap-2"
+              className="px-8 py-3.5 bg-brand-gold text-content-primary font-bold rounded-full hover:bg-brand-gold-dark transition-all btn-primary inline-flex items-center justify-center gap-2"
             >
               Get in Touch <ArrowRight className="w-4 h-4" />
             </Link>
             <Link
               href="/driver/register"
-              className="px-8 py-3.5 border border-border text-text-dark font-bold rounded-full hover:border-primary hover:text-primary transition-all btn-outline inline-flex items-center justify-center gap-2"
+              className="px-8 py-3.5 border border-edge text-content-primary font-bold rounded-full hover:border-brand-gold hover:text-brand-gold-dark transition-all btn-outline inline-flex items-center justify-center gap-2"
             >
               Join Our Team <ArrowRight className="w-4 h-4" />
             </Link>

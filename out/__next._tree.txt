@@ -1,4 +1,0 @@
-:HL["/specialist-transport/_next/static/chunks/ce476d33cb8ae1fe.css","style"]
-:HL["/specialist-transport/_next/static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
-:HL["/specialist-transport/images/logo.svg","image"]
-0:{"buildId":"dLCUoKS66hLGfNGAKWkkA","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
