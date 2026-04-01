@@ -2,8 +2,8 @@
 // Shared constants — single source of truth
 // ──────────────────────────────────────────────
 
-/** Base path for all assets (matches next.config.mjs basePath) */
-export const BASE_PATH = "/specialist-transport";
+/** Base path for all assets (empty for root domain deployment) */
+export const BASE_PATH = "";
 
 /** Contact information */
 export const CONTACT = {
