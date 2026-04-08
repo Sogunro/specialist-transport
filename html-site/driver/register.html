@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register as Driver | Connect Care Transportation Services</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+  <!-- ══════════ NAVBAR ══════════ -->
+  <nav class="navbar">
+    <!-- Top info bar -->
+    <div class="top-bar">
+      <div class="container flex items-center justify-between" style="height:36px">
+        <div class="flex items-center gap-md">
+          <span class="flex items-center gap-sm">
+            <i data-lucide="clock" style="width:12px;height:12px;color:var(--brand-gold)"></i>
+            <span style="font-weight:500">Open 24/7</span>
+          </span>
+          <span class="hidden" style="color:rgba(255,255,255,0.4)">|</span>
+          <a href="mailto:admin@connectcarepatienttransport.com" class="hidden" style="color:rgba(255,255,255,0.7)">admin@connectcarepatienttransport.com</a>
+        </div>
+        <a href="tel:07440787932" style="color:#f87171;font-weight:600" class="flex items-center gap-sm">
+          <i data-lucide="alert-circle" style="width:12px;height:12px"></i>
+          Emergency: 07440 787 932
+        </a>
+      </div>
+    </div>
+    <!-- Main nav -->
+    <div style="background:var(--surface-white);box-shadow:var(--shadow-nav)">
+      <div class="container">
+        <div class="navbar-inner">
+          <a href="../index.html" class="navbar-logo">
+            <img src="../images/logo.svg" alt="Connect Care Transportation Services">
+          </a>
+          <div class="nav-links">
+            <a href="../index.html">Home</a>
+            <a href="../services.html">Our Services</a>
+            <a href="../about.html">About Us</a>
+            <a href="../contact.html">Contact</a>
+            <a href="register.html" class="active">Register as Driver</a>
+          </div>
+          <div class="nav-actions">
+            <a href="tel:01616763832" class="nav-phone">
+              <i data-lucide="phone" style="width:16px;height:16px"></i>
+              <div>
+                <span style="font-weight:700;color:var(--content-primary)">0161 676 3832</span>
+                <span style="display:block;font-size:11px;color:var(--success);font-weight:500">Open 24/7</span>
+              </div>
+            </a>
+            <a href="../contact.html" class="btn btn-gold" style="padding:10px 24px;font-size:0.875rem">Get a Quote</a>
+          </div>
+          <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle menu">
+            <i data-lucide="menu" style="width:24px;height:24px"></i>
+          </button>
+        </div>
+      </div>
+      <!-- Mobile menu -->
+      <div class="mobile-menu" id="mobile-menu">
+        <a href="../index.html">Home</a>
+        <a href="../services.html">Our Services</a>
+        <a href="../about.html">About Us</a>
+        <a href="../contact.html">Contact</a>
+        <a href="register.html">Register as Driver</a>
+        <div style="padding:16px">
+          <a href="tel:01616763832" class="flex items-center gap-sm" style="font-weight:700;color:var(--content-primary);margin-bottom:12px">
+            <i data-lucide="phone" style="width:16px;height:16px;color:var(--trust)"></i>
+            0161 676 3832
+          </a>
+          <a href="../contact.html" class="btn btn-gold" style="display:block;text-align:center;padding:12px 24px;font-size:0.875rem">Get a Quote</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ══════════ PAGE HERO ══════════ -->
+  <section class="page-hero text-center">
+    <div class="container" style="max-width:56rem">
+      <p style="color:var(--brand-gold-dark);font-weight:600;font-size:0.875rem;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:12px">
+        Driver Portal
+      </p>
+      <h1 style="font-size:2rem;font-weight:700;margin-bottom:12px">Join our team</h1>
+      <p style="font-size:1.125rem;color:var(--content-secondary);max-width:42rem;margin:0 auto">
+        Register as a Connect Care driver. We are looking for compassionate, reliable professionals.
+      </p>
+    </div>
+  </section>
+
+  <!-- ══════════ STEP PROGRESS ══════════ -->
+  <section style="padding:24px 0;background:var(--surface-white);border-bottom:1px solid var(--edge-light)">
+    <div class="container" style="max-width:48rem">
+      <div class="flex items-center justify-between" id="step-progress">
+        <!-- Step 1 -->
+        <div class="flex items-center" style="flex:1">
+          <div style="display:flex;flex-direction:column;align-items:center">
+            <div class="step-circle active" data-step="1" style="width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.875rem;background:var(--brand-charcoal);color:white;box-shadow:var(--shadow-soft);transition:all 0.3s">
+              <i data-lucide="user" style="width:20px;height:20px"></i>
+            </div>
+            <span class="step-label" style="font-size:0.75rem;margin-top:8px;font-weight:500;color:var(--brand-charcoal);display:none">Personal Info</span>
+          </div>
+          <div class="step-line" data-after="1" style="flex:1;height:2px;margin:0 12px;border-radius:2px;background:var(--edge);transition:all 0.3s"></div>
+        </div>
+        <!-- Step 2 -->
+        <div class="flex items-center" style="flex:1">
+          <div style="display:flex;flex-direction:column;align-items:center">
+            <div class="step-circle" data-step="2" style="width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.875rem;background:var(--surface);border:1px solid var(--edge);color:var(--content-muted);transition:all 0.3s">
+              <i data-lucide="car" style="width:20px;height:20px"></i>
+            </div>
+            <span class="step-label" style="font-size:0.75rem;margin-top:8px;font-weight:500;color:var(--content-muted);display:none">Driving Details</span>
+          </div>
+          <div class="step-line" data-after="2" style="flex:1;height:2px;margin:0 12px;border-radius:2px;background:var(--edge);transition:all 0.3s"></div>
+        </div>
+        <!-- Step 3 -->
+        <div class="flex items-center" style="flex:1">
+          <div style="display:flex;flex-direction:column;align-items:center">
+            <div class="step-circle" data-step="3" style="width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.875rem;background:var(--surface);border:1px solid var(--edge);color:var(--content-muted);transition:all 0.3s">
+              <i data-lucide="settings" style="width:20px;height:20px"></i>
+            </div>
+            <span class="step-label" style="font-size:0.75rem;margin-top:8px;font-weight:500;color:var(--content-muted);display:none">Options</span>
+          </div>
+          <div class="step-line" data-after="3" style="flex:1;height:2px;margin:0 12px;border-radius:2px;background:var(--edge);transition:all 0.3s"></div>
+        </div>
+        <!-- Step 4 -->
+        <div style="display:flex;flex-direction:column;align-items:center">
+          <div class="step-circle" data-step="4" style="width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.875rem;background:var(--surface);border:1px solid var(--edge);color:var(--content-muted);transition:all 0.3s">
+            <i data-lucide="check-circle" style="width:20px;height:20px"></i>
+          </div>
+          <span class="step-label" style="font-size:0.75rem;margin-top:8px;font-weight:500;color:var(--content-muted);display:none">Review</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ FORM ══════════ -->
+  <section class="section bg-surface">
+    <div class="container" style="max-width:48rem">
+      <form id="driver-register-form">
+        <div style="background:var(--surface-white);border-radius:var(--radius-2xl);padding:32px;border:1px solid var(--edge-light);box-shadow:var(--shadow-card)">
+
+          <!-- Step Indicator Dots -->
+          <div class="step-indicator">
+            <div class="step-dot active" data-step="1"></div>
+            <div class="step-dot" data-step="2"></div>
+            <div class="step-dot" data-step="3"></div>
+            <div class="step-dot" data-step="4"></div>
+          </div>
+
+          <!-- Step 1: Personal Information -->
+          <div class="form-step active" data-step="1">
+            <h2 style="font-size:1.25rem;font-weight:700;margin-bottom:24px;display:flex;align-items:center;gap:12px">
+              <i data-lucide="user" style="width:20px;height:20px;color:var(--trust)"></i> Personal Information
+            </h2>
+            <div class="form-grid form-grid-2" style="margin-bottom:16px">
+              <div>
+                <label class="input-label" for="firstName">First Name *</label>
+                <input type="text" id="firstName" name="firstName" class="input-field" placeholder="First name" required>
+              </div>
+              <div>
+                <label class="input-label" for="lastName">Last Name *</label>
+                <input type="text" id="lastName" name="lastName" class="input-field" placeholder="Last name" required>
+              </div>
+            </div>
+            <div class="form-grid form-grid-2" style="margin-bottom:16px">
+              <div>
+                <label class="input-label" for="email">Email *</label>
+                <input type="email" id="email" name="email" class="input-field" placeholder="your@email.com" required>
+              </div>
+              <div>
+                <label class="input-label" for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" class="input-field" placeholder="Phone number">
+              </div>
+            </div>
+            <div style="margin-bottom:16px">
+              <label class="input-label" for="address">Address</label>
+              <input type="text" id="address" name="address" class="input-field" placeholder="Street address">
+            </div>
+            <div class="form-grid form-grid-2">
+              <div>
+                <label class="input-label" for="city">City</label>
+                <input type="text" id="city" name="city" class="input-field" placeholder="City">
+              </div>
+              <div>
+                <label class="input-label" for="postcode">Postcode</label>
+                <input type="text" id="postcode" name="postcode" class="input-field" placeholder="Postcode">
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 2: Driving Details -->
+          <div class="form-step" data-step="2">
+            <h2 style="font-size:1.25rem;font-weight:700;margin-bottom:24px;display:flex;align-items:center;gap:12px">
+              <i data-lucide="car" style="width:20px;height:20px;color:var(--trust)"></i> Driving Details
+            </h2>
+            <div style="margin-bottom:16px">
+              <label class="input-label" for="licenceType">Type of Licence *</label>
+              <select id="licenceType" name="licenceType" class="input-field" required>
+                <option value="">Select licence type</option>
+                <option value="taxi">Taxi Licence</option>
+                <option value="pcv">PCV Licence</option>
+                <option value="normal">Normal Driving Licence</option>
+              </select>
+            </div>
+            <div style="margin-bottom:16px">
+              <label class="input-label" for="yearsExperience">Experience</label>
+              <select id="yearsExperience" name="yearsExperience" class="input-field">
+                <option value="">Select</option>
+                <option value="1-2">1-2 years</option>
+                <option value="3-5">3-5 years</option>
+                <option value="5-10">5-10 years</option>
+                <option value="10+">10+ years</option>
+              </select>
+            </div>
+            <div style="margin-bottom:16px">
+              <label class="input-label" for="vehicleType">Preferred Vehicle</label>
+              <select id="vehicleType" name="vehicleType" class="input-field">
+                <option value="">Select vehicle type</option>
+                <option value="car">Car / MPV</option>
+                <option value="minibus">Minibus</option>
+                <option value="wav">Wheelchair Accessible Vehicle (WAV)</option>
+                <option value="any">Any / No preference</option>
+              </select>
+            </div>
+            <div style="margin-bottom:16px">
+              <label class="input-label" for="hasDBS">Enhanced DBS?</label>
+              <select id="hasDBS" name="hasDBS" class="input-field">
+                <option value="">Select</option>
+                <option value="yes">Yes - current and valid</option>
+                <option value="expired">Yes - but expired</option>
+                <option value="no">No - willing to obtain one</option>
+              </select>
+            </div>
+            <div id="dbsNumberGroup" style="margin-bottom:16px;display:none">
+              <label class="input-label" for="dbsNumber">DBS Certificate Number</label>
+              <input type="text" id="dbsNumber" name="dbsNumber" class="input-field" placeholder="DBS certificate number">
+            </div>
+            <div>
+              <label class="input-label" for="availability">Availability</label>
+              <select id="availability" name="availability" class="input-field">
+                <option value="">Select availability</option>
+                <option value="fulltime">Full-time</option>
+                <option value="parttime">Part-time</option>
+                <option value="weekdays">Weekdays only</option>
+                <option value="flexible">Flexible</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Step 3: Options -->
+          <div class="form-step" data-step="3">
+            <h2 style="font-size:1.25rem;font-weight:700;margin-bottom:24px;display:flex;align-items:center;gap:12px">
+              <i data-lucide="settings" style="width:20px;height:20px;color:var(--trust)"></i> Options
+            </h2>
+            <div style="margin-bottom:24px">
+              <label class="input-label" style="margin-bottom:16px">Do you hold any of the following?</label>
+              <div style="display:flex;flex-direction:column;gap:12px">
+                <label class="checkbox-item">
+                  <input type="checkbox" id="hasSENDTraining" name="hasSENDTraining">
+                  <span style="color:var(--content-secondary)">SEND Awareness Training</span>
+                </label>
+                <label class="checkbox-item">
+                  <input type="checkbox" id="hasSafeguardingTraining" name="hasSafeguardingTraining">
+                  <span style="color:var(--content-secondary)">Safeguarding / Child Protection Training</span>
+                </label>
+                <label class="checkbox-item">
+                  <input type="checkbox" id="hasFirstAid" name="hasFirstAid">
+                  <span style="color:var(--content-secondary)">First Aid Certificate</span>
+                </label>
+                <label class="checkbox-item">
+                  <input type="checkbox" id="hasManualHandling" name="hasManualHandling">
+                  <span style="color:var(--content-secondary)">Manual Handling Training</span>
+                </label>
+                <label class="checkbox-item">
+                  <input type="checkbox" id="hasPATS" name="hasPATS">
+                  <span style="color:var(--content-secondary)">Passenger Assistant Training (PATS)</span>
+                </label>
+              </div>
+            </div>
+            <!-- Info box -->
+            <div style="background:var(--trust-light);border-radius:var(--radius-xl);padding:20px;border-left:4px solid var(--trust);margin-bottom:24px">
+              <div class="flex items-start gap-md">
+                <i data-lucide="alert-circle" style="width:20px;height:20px;color:var(--trust);flex-shrink:0;margin-top:2px"></i>
+                <div>
+                  <p style="color:var(--content-primary);font-weight:500;font-size:0.875rem">Don't worry if you don't have all certifications</p>
+                  <p style="color:var(--content-tertiary);font-size:0.875rem;margin-top:4px">We provide full training and support for all new drivers.</p>
+                </div>
+              </div>
+            </div>
+            <div style="margin-bottom:16px">
+              <label class="input-label" for="previousEmployer">Previous Transport Experience</label>
+              <textarea id="previousEmployer" name="previousEmployer" class="input-field" rows="3" style="resize:none" placeholder="Brief details of previous roles..."></textarea>
+            </div>
+            <div>
+              <label class="input-label" for="whyJoin">Why join Connect Care?</label>
+              <textarea id="whyJoin" name="whyJoin" class="input-field" rows="3" style="resize:none" placeholder="Tell us what motivates you..."></textarea>
+            </div>
+          </div>
+
+          <!-- Step 4: Review -->
+          <div class="form-step" data-step="4">
+            <h2 style="font-size:1.25rem;font-weight:700;margin-bottom:24px;display:flex;align-items:center;gap:12px">
+              <i data-lucide="check-circle" style="width:20px;height:20px;color:var(--trust)"></i> Review Your Application
+            </h2>
+            <!-- Review: Personal Details -->
+            <div style="background:var(--surface);border-radius:var(--radius-xl);padding:20px;border:1px solid var(--edge-light);margin-bottom:16px">
+              <h3 style="font-size:0.875rem;font-weight:600;color:var(--trust);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:12px">Personal Details</h3>
+              <div class="form-grid form-grid-2" style="font-size:0.875rem">
+                <div>
+                  <span style="color:var(--content-tertiary)">Name: </span>
+                  <span id="review-name" style="color:var(--content-primary);font-weight:500">-</span>
+                </div>
+                <div>
+                  <span style="color:var(--content-tertiary)">Email: </span>
+                  <span id="review-email" style="color:var(--content-primary);font-weight:500">-</span>
+                </div>
+                <div>
+                  <span style="color:var(--content-tertiary)">Phone: </span>
+                  <span id="review-phone" style="color:var(--content-primary);font-weight:500">-</span>
+                </div>
+                <div>
+                  <span style="color:var(--content-tertiary)">Location: </span>
+                  <span id="review-location" style="color:var(--content-primary);font-weight:500">-</span>
+                </div>
+              </div>
+            </div>
+            <!-- Review: Driving Details -->
+            <div style="background:var(--surface);border-radius:var(--radius-xl);padding:20px;border:1px solid var(--edge-light);margin-bottom:24px">
+              <h3 style="font-size:0.875rem;font-weight:600;color:var(--trust);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:12px">Driving Details</h3>
+              <div class="form-grid form-grid-2" style="font-size:0.875rem">
+                <div>
+                  <span style="color:var(--content-tertiary)">Licence Type: </span>
+                  <span id="review-licence" style="color:var(--content-primary);font-weight:500">-</span>
+                </div>
+                <div>
+                  <span style="color:var(--content-tertiary)">Experience: </span>
+                  <span id="review-experience" style="color:var(--content-primary);font-weight:500">-</span>
+                </div>
+                <div>
+                  <span style="color:var(--content-tertiary)">Preferred Vehicle: </span>
+                  <span id="review-vehicle" style="color:var(--content-primary);font-weight:500">-</span>
+                </div>
+                <div>
+                  <span style="color:var(--content-tertiary)">DBS: </span>
+                  <span id="review-dbs" style="color:var(--content-primary);font-weight:500">-</span>
+                </div>
+              </div>
+            </div>
+            <!-- Consent checkboxes -->
+            <div style="display:flex;flex-direction:column;gap:12px">
+              <label class="checkbox-item" style="align-items:flex-start">
+                <input type="checkbox" id="agreeToCriminalCheck" name="agreeToCriminalCheck" required style="margin-top:2px">
+                <span style="color:var(--content-secondary);font-size:0.875rem">
+                  I consent to an Enhanced DBS criminal record check and understand this is a requirement. *
+                </span>
+              </label>
+              <label class="checkbox-item" style="align-items:flex-start">
+                <input type="checkbox" id="agreeToTerms" name="agreeToTerms" required style="margin-top:2px">
+                <span style="color:var(--content-secondary);font-size:0.875rem">
+                  I confirm all information is accurate and agree to the terms and conditions. *
+                </span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Navigation Buttons -->
+          <div class="flex items-center justify-between" style="margin-top:40px;padding-top:24px;border-top:1px solid var(--edge-light)">
+            <div id="form-back-area">
+              <a href="login.html" id="sign-in-link" style="font-size:0.875rem;color:var(--content-tertiary);transition:color 0.2s">Already registered? Sign in</a>
+              <button type="button" id="btn-prev" class="btn btn-outline" style="display:none">
+                <i data-lucide="arrow-left" style="width:16px;height:16px"></i> Back
+              </button>
+            </div>
+            <div>
+              <button type="button" id="btn-next" class="btn btn-charcoal">
+                Next <i data-lucide="arrow-right" style="width:16px;height:16px"></i>
+              </button>
+              <button type="submit" id="btn-submit" class="btn btn-gold" style="display:none">
+                Submit Application <i data-lucide="check-circle" style="width:16px;height:16px"></i>
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </form>
+
+      <!-- Success State -->
+      <div id="register-success" style="display:none">
+        <div style="background:var(--surface-white);border-radius:var(--radius-2xl);padding:48px;border:1px solid var(--edge-light);box-shadow:var(--shadow-card);text-align:center;max-width:32rem;margin:0 auto">
+          <div class="success-icon">
+            <i data-lucide="check-circle" style="width:40px;height:40px"></i>
+          </div>
+          <h1 style="font-size:1.875rem;font-weight:700;margin-bottom:16px">Application Submitted!</h1>
+          <p style="color:var(--content-secondary);font-size:1.125rem;margin-bottom:32px;line-height:1.6">
+            Thank you for your interest in joining Connect Care. We will review your application and contact you within 3-5 business days.
+          </p>
+          <div style="background:var(--surface);border-radius:var(--radius-xl);padding:20px;margin-bottom:32px;text-align:left;border:1px solid var(--edge-light)">
+            <p style="font-size:0.875rem;color:var(--content-secondary)">
+              <strong style="color:var(--content-primary)">What happens next?</strong>
+            </p>
+            <ol style="font-size:0.875rem;color:var(--content-tertiary);margin-top:8px;padding-left:20px;list-style:decimal">
+              <li style="margin-bottom:4px">Application review (1-2 days)</li>
+              <li style="margin-bottom:4px">Phone interview</li>
+              <li style="margin-bottom:4px">Document verification &amp; DBS check</li>
+              <li>Training &amp; onboarding</li>
+            </ol>
+          </div>
+          <a href="../index.html" class="btn btn-gold">
+            Back to Home <i data-lucide="arrow-right" style="width:16px;height:16px"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ FOOTER ══════════ -->
+  <footer>
+    <!-- CTA Banner -->
+    <div class="footer-cta">
+      <div class="container">
+        <div style="background:var(--brand-charcoal);border-radius:var(--radius-2xl);padding:48px;color:white;text-align:center">
+          <h2 style="font-size:1.875rem;font-weight:700;margin-bottom:16px;color:white">Ready to Get Started?</h2>
+          <p style="color:rgba(255,255,255,0.8);max-width:42rem;margin:0 auto 32px;font-size:1.125rem">
+            Contact us today to discuss your transportation needs. We provide tailored solutions for every requirement.
+          </p>
+          <div class="flex justify-center gap-base" style="flex-wrap:wrap">
+            <a href="../contact.html" class="btn btn-gold">Request a Quote</a>
+            <a href="register.html" class="btn" style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.3);color:white">Join Our Team</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer links -->
+    <div class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <!-- Brand -->
+          <div>
+            <a href="../index.html" style="display:inline-block;margin-bottom:24px">
+              <img src="../images/logo.svg" alt="Connect Care Transportation Services" style="height:40px;width:auto;filter:brightness(0) invert(1)">
+            </a>
+            <p style="font-size:0.875rem;color:rgba(255,255,255,0.7);line-height:1.6">
+              Safe, reliable, and person-centred transportation services for vulnerable individuals, healthcare providers, and local authorities.
+            </p>
+          </div>
+          <!-- Services -->
+          <div>
+            <h4>Our Services</h4>
+            <a href="../services.html">SEND School Transport</a>
+            <a href="../services.html">WAV Transportation</a>
+            <a href="../services.html">Care Home Transport</a>
+            <a href="../services.html">Hospital Transfers</a>
+          </div>
+          <!-- Quick Links -->
+          <div>
+            <h4>Quick Links</h4>
+            <a href="../about.html">About Us</a>
+            <a href="../contact.html">Contact</a>
+            <a href="register.html">Driver Registration</a>
+          </div>
+          <!-- Contact -->
+          <div>
+            <h4>Contact Us</h4>
+            <div style="display:flex;flex-direction:column;gap:16px">
+              <div class="flex items-start gap-md">
+                <i data-lucide="phone" style="width:16px;height:16px;color:var(--trust);flex-shrink:0;margin-top:2px"></i>
+                <span style="font-size:0.875rem;color:rgba(255,255,255,0.7)">0161 676 3832</span>
+              </div>
+              <div class="flex items-start gap-md">
+                <i data-lucide="mail" style="width:16px;height:16px;color:var(--trust);flex-shrink:0;margin-top:2px"></i>
+                <span style="font-size:0.875rem;color:rgba(255,255,255,0.7)">admin@connectcarepatienttransport.com</span>
+              </div>
+              <div class="flex items-start gap-md">
+                <i data-lucide="clock" style="width:16px;height:16px;color:var(--trust);flex-shrink:0;margin-top:2px"></i>
+                <span style="font-size:0.875rem;color:rgba(255,255,255,0.7)">Open 24/7</span>
+              </div>
+              <div class="flex items-start gap-md">
+                <i data-lucide="alert-circle" style="width:16px;height:16px;color:#ef4444;flex-shrink:0;margin-top:2px"></i>
+                <a href="tel:07440787932" style="font-size:0.875rem;color:rgba(255,255,255,0.7)">Emergency: 07440 787 932</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Bottom bar -->
+        <div class="footer-bottom">
+          <p>&copy; 2026 Connect Care Transportation Services. All rights reserved.</p>
+          <div class="flex gap-lg">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Cookie Policy</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>
