@@ -3,6 +3,13 @@
    Vanilla JS, no dependencies
    ═══════════════════════════════════════════════ */
 
+// EmailJS configuration
+var EMAILJS_CONFIG = {
+  serviceId: 'service_8lwvt9g',
+  contactTemplateId: 'template_7lsga5j',
+  driverTemplateId: 'template_4vtt7ql'
+};
+
 document.addEventListener('DOMContentLoaded', function () {
 
   // ── Lucide Icons ──
@@ -126,7 +133,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // ══════════════════════════════════════════
-  // 3. CONTACT FORM
+  // 3. CONTACT FORM (EmailJS)
   // ══════════════════════════════════════════
   var contactForm = document.getElementById('contact-form');
   var formSuccess = document.getElementById('form-success');
@@ -134,8 +141,36 @@ document.addEventListener('DOMContentLoaded', function () {
   if (contactForm && formSuccess) {
     contactForm.addEventListener('submit', function (e) {
       e.preventDefault();
-      contactForm.style.display = 'none';
-      formSuccess.style.display = 'block';
+
+      var submitBtn = document.getElementById('contact-submit');
+      var submitText = document.getElementById('contact-submit-text');
+      var errorBox = document.getElementById('form-error');
+      if (errorBox) { errorBox.style.display = 'none'; errorBox.textContent = ''; }
+      if (submitBtn) submitBtn.disabled = true;
+      if (submitText) submitText.textContent = 'Sending...';
+
+      if (typeof emailjs === 'undefined') {
+        if (errorBox) { errorBox.textContent = 'Email service unavailable. Please call us instead.'; errorBox.style.display = 'block'; }
+        if (submitBtn) submitBtn.disabled = false;
+        if (submitText) submitText.textContent = 'Send Message';
+        return;
+      }
+
+      emailjs.sendForm(EMAILJS_CONFIG.serviceId, EMAILJS_CONFIG.contactTemplateId, contactForm)
+        .then(function () {
+          contactForm.style.display = 'none';
+          formSuccess.style.display = 'block';
+          if (typeof lucide !== 'undefined') lucide.createIcons();
+        })
+        .catch(function (err) {
+          console.error('EmailJS error:', err);
+          if (errorBox) {
+            errorBox.textContent = 'Something went wrong. Please try again or call us directly.';
+            errorBox.style.display = 'block';
+          }
+          if (submitBtn) submitBtn.disabled = false;
+          if (submitText) submitText.textContent = 'Send Message';
+        });
     });
   }
 
@@ -329,17 +364,59 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     }
 
-    // Form submit
+    // Form submit (EmailJS)
     registerForm.addEventListener('submit', function (e) {
       e.preventDefault();
-      registerForm.style.display = 'none';
-      if (registerSuccess) {
-        registerSuccess.style.display = 'block';
-        // Re-init icons in the success state
-        if (typeof lucide !== 'undefined') {
-          lucide.createIcons();
-        }
+
+      if (btnSubmit) btnSubmit.disabled = true;
+
+      if (typeof emailjs === 'undefined') {
+        alert('Email service unavailable. Please call us instead.');
+        if (btnSubmit) btnSubmit.disabled = false;
+        return;
       }
+
+      // Collect certifications into one string
+      var certList = [];
+      if (document.getElementById('hasSENDTraining') && document.getElementById('hasSENDTraining').checked) certList.push('SEND Training');
+      if (document.getElementById('hasSafeguardingTraining') && document.getElementById('hasSafeguardingTraining').checked) certList.push('Safeguarding Training');
+      if (document.getElementById('hasFirstAid') && document.getElementById('hasFirstAid').checked) certList.push('First Aid');
+      if (document.getElementById('hasManualHandling') && document.getElementById('hasManualHandling').checked) certList.push('Manual Handling');
+      if (document.getElementById('hasPATS') && document.getElementById('hasPATS').checked) certList.push('PATS');
+
+      // Build template params — match EmailJS template variables
+      var params = {
+        first_name: document.getElementById('firstName').value,
+        last_name: document.getElementById('lastName').value,
+        email: document.getElementById('email').value,
+        phone: document.getElementById('phone').value,
+        address: document.getElementById('address').value,
+        city: document.getElementById('city').value,
+        postcode: document.getElementById('postcode').value,
+        licence_type: document.getElementById('licenceType').value,
+        years_experience: document.getElementById('yearsExperience').value,
+        vehicle_type: document.getElementById('vehicleType').value,
+        has_dbs: document.getElementById('hasDBS').value,
+        dbs_number: document.getElementById('dbsNumber') ? document.getElementById('dbsNumber').value : '',
+        availability: document.getElementById('availability').value,
+        certifications: certList.length ? certList.join(', ') : 'None listed',
+        previous_employer: document.getElementById('previousEmployer').value || 'Not provided',
+        why_join: document.getElementById('whyJoin').value || 'Not provided'
+      };
+
+      emailjs.send(EMAILJS_CONFIG.serviceId, EMAILJS_CONFIG.driverTemplateId, params)
+        .then(function () {
+          registerForm.style.display = 'none';
+          if (registerSuccess) {
+            registerSuccess.style.display = 'block';
+            if (typeof lucide !== 'undefined') lucide.createIcons();
+          }
+        })
+        .catch(function (err) {
+          console.error('EmailJS error:', err);
+          alert('Something went wrong. Please try again or call us directly.');
+          if (btnSubmit) btnSubmit.disabled = false;
+        });
     });
   }
 

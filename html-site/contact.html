@@ -169,46 +169,48 @@
             <div class="form-grid form-grid-2">
               <div>
                 <label class="input-label">Full Name *</label>
-                <input type="text" required class="input-field" placeholder="Your full name">
+                <input type="text" name="name" required class="input-field" placeholder="Your full name">
               </div>
               <div>
                 <label class="input-label">Email *</label>
-                <input type="email" required class="input-field" placeholder="your@email.com">
+                <input type="email" name="email" required class="input-field" placeholder="your@email.com">
               </div>
             </div>
 
             <div class="form-grid form-grid-2">
               <div>
                 <label class="input-label">Phone Number</label>
-                <input type="tel" class="input-field" placeholder="Your phone number">
+                <input type="tel" name="phone" class="input-field" placeholder="Your phone number">
               </div>
               <div>
                 <label class="input-label">Organisation</label>
-                <input type="text" class="input-field" placeholder="Company or organisation">
+                <input type="text" name="organisation" class="input-field" placeholder="Company or organisation">
               </div>
             </div>
 
             <div>
               <label class="input-label">Service Required *</label>
-              <select required class="input-field">
+              <select name="service" required class="input-field">
                 <option value="">Select a service</option>
-                <option value="send">SEND School Transport</option>
-                <option value="wav">WAV Transportation</option>
-                <option value="care">Care Home &amp; Elderly Transport</option>
-                <option value="hospital">Hospital Transfers</option>
-                <option value="other">Other / Multiple Services</option>
+                <option value="SEND School Transport">SEND School Transport</option>
+                <option value="WAV Transportation">WAV Transportation</option>
+                <option value="Care Home & Elderly Transport">Care Home &amp; Elderly Transport</option>
+                <option value="Hospital Transfers">Hospital Transfers</option>
+                <option value="Other / Multiple Services">Other / Multiple Services</option>
               </select>
             </div>
 
             <div>
               <label class="input-label">Message *</label>
-              <textarea required rows="5" class="input-field" style="resize:none" placeholder="Tell us about your transport requirements..."></textarea>
+              <textarea name="message" required rows="5" class="input-field" style="resize:none" placeholder="Tell us about your transport requirements..."></textarea>
             </div>
 
+            <div id="form-error" style="display:none;color:var(--error);text-align:center;font-size:0.875rem"></div>
+
             <div class="text-center">
-              <button type="submit" class="btn btn-gold">
+              <button type="submit" id="contact-submit" class="btn btn-gold">
                 <i data-lucide="send" style="width:16px;height:16px"></i>
-                Send Message
+                <span id="contact-submit-text">Send Message</span>
               </button>
             </div>
           </form>
@@ -314,6 +316,10 @@
   </footer>
 
   <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>
+    emailjs.init({ publicKey: "UKvJAqHruNIx2tb3m" });
+  </script>
   <script src="js/main.js"></script>
   <script>lucide.createIcons();</script>
 </body>
