@@ -115,18 +115,8 @@
           <div class="step-line" data-after="2" style="flex:1;height:2px;margin:0 12px;border-radius:2px;background:var(--edge);transition:all 0.3s"></div>
         </div>
         <!-- Step 3 -->
-        <div class="flex items-center" style="flex:1">
-          <div style="display:flex;flex-direction:column;align-items:center">
-            <div class="step-circle" data-step="3" style="width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.875rem;background:var(--surface);border:1px solid var(--edge);color:var(--content-muted);transition:all 0.3s">
-              <i data-lucide="settings" style="width:20px;height:20px"></i>
-            </div>
-            <span class="step-label" style="font-size:0.75rem;margin-top:8px;font-weight:500;color:var(--content-muted);display:none">Options</span>
-          </div>
-          <div class="step-line" data-after="3" style="flex:1;height:2px;margin:0 12px;border-radius:2px;background:var(--edge);transition:all 0.3s"></div>
-        </div>
-        <!-- Step 4 -->
         <div style="display:flex;flex-direction:column;align-items:center">
-          <div class="step-circle" data-step="4" style="width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.875rem;background:var(--surface);border:1px solid var(--edge);color:var(--content-muted);transition:all 0.3s">
+          <div class="step-circle" data-step="3" style="width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.875rem;background:var(--surface);border:1px solid var(--edge);color:var(--content-muted);transition:all 0.3s">
             <i data-lucide="check-circle" style="width:20px;height:20px"></i>
           </div>
           <span class="step-label" style="font-size:0.75rem;margin-top:8px;font-weight:500;color:var(--content-muted);display:none">Review</span>
@@ -146,7 +136,6 @@
             <div class="step-dot active" data-step="1"></div>
             <div class="step-dot" data-step="2"></div>
             <div class="step-dot" data-step="3"></div>
-            <div class="step-dot" data-step="4"></div>
           </div>
 
           <!-- Step 1: Personal Information -->
@@ -249,58 +238,8 @@
             </div>
           </div>
 
-          <!-- Step 3: Options -->
+          <!-- Step 3: Review -->
           <div class="form-step" data-step="3">
-            <h2 style="font-size:1.25rem;font-weight:700;margin-bottom:24px;display:flex;align-items:center;gap:12px">
-              <i data-lucide="settings" style="width:20px;height:20px;color:var(--trust)"></i> Options
-            </h2>
-            <div style="margin-bottom:24px">
-              <label class="input-label" style="margin-bottom:16px">Do you hold any of the following?</label>
-              <div style="display:flex;flex-direction:column;gap:12px">
-                <label class="checkbox-item">
-                  <input type="checkbox" id="hasSENDTraining" name="hasSENDTraining">
-                  <span style="color:var(--content-secondary)">SEND Awareness Training</span>
-                </label>
-                <label class="checkbox-item">
-                  <input type="checkbox" id="hasSafeguardingTraining" name="hasSafeguardingTraining">
-                  <span style="color:var(--content-secondary)">Safeguarding / Child Protection Training</span>
-                </label>
-                <label class="checkbox-item">
-                  <input type="checkbox" id="hasFirstAid" name="hasFirstAid">
-                  <span style="color:var(--content-secondary)">First Aid Certificate</span>
-                </label>
-                <label class="checkbox-item">
-                  <input type="checkbox" id="hasManualHandling" name="hasManualHandling">
-                  <span style="color:var(--content-secondary)">Manual Handling Training</span>
-                </label>
-                <label class="checkbox-item">
-                  <input type="checkbox" id="hasPATS" name="hasPATS">
-                  <span style="color:var(--content-secondary)">Passenger Assistant Training (PATS)</span>
-                </label>
-              </div>
-            </div>
-            <!-- Info box -->
-            <div style="background:var(--trust-light);border-radius:var(--radius-xl);padding:20px;border-left:4px solid var(--trust);margin-bottom:24px">
-              <div class="flex items-start gap-md">
-                <i data-lucide="alert-circle" style="width:20px;height:20px;color:var(--trust);flex-shrink:0;margin-top:2px"></i>
-                <div>
-                  <p style="color:var(--content-primary);font-weight:500;font-size:0.875rem">Don't worry if you don't have all certifications</p>
-                  <p style="color:var(--content-tertiary);font-size:0.875rem;margin-top:4px">We provide full training and support for all new drivers.</p>
-                </div>
-              </div>
-            </div>
-            <div style="margin-bottom:16px">
-              <label class="input-label" for="previousEmployer">Previous Transport Experience</label>
-              <textarea id="previousEmployer" name="previousEmployer" class="input-field" rows="3" style="resize:none" placeholder="Brief details of previous roles..."></textarea>
-            </div>
-            <div>
-              <label class="input-label" for="whyJoin">Why join Connect Care?</label>
-              <textarea id="whyJoin" name="whyJoin" class="input-field" rows="3" style="resize:none" placeholder="Tell us what motivates you..."></textarea>
-            </div>
-          </div>
-
-          <!-- Step 4: Review -->
-          <div class="form-step" data-step="4">
             <h2 style="font-size:1.25rem;font-weight:700;margin-bottom:24px;display:flex;align-items:center;gap:12px">
               <i data-lucide="check-circle" style="width:20px;height:20px;color:var(--trust)"></i> Review Your Application
             </h2>

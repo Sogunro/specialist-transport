@@ -376,14 +376,6 @@ document.addEventListener('DOMContentLoaded', function () {
         return;
       }
 
-      // Collect certifications into one string
-      var certList = [];
-      if (document.getElementById('hasSENDTraining') && document.getElementById('hasSENDTraining').checked) certList.push('SEND Training');
-      if (document.getElementById('hasSafeguardingTraining') && document.getElementById('hasSafeguardingTraining').checked) certList.push('Safeguarding Training');
-      if (document.getElementById('hasFirstAid') && document.getElementById('hasFirstAid').checked) certList.push('First Aid');
-      if (document.getElementById('hasManualHandling') && document.getElementById('hasManualHandling').checked) certList.push('Manual Handling');
-      if (document.getElementById('hasPATS') && document.getElementById('hasPATS').checked) certList.push('PATS');
-
       // Build template params — match EmailJS template variables
       var params = {
         first_name: document.getElementById('firstName').value,
@@ -398,10 +390,7 @@ document.addEventListener('DOMContentLoaded', function () {
         vehicle_type: document.getElementById('vehicleType').value,
         has_dbs: document.getElementById('hasDBS').value,
         dbs_number: document.getElementById('dbsNumber') ? document.getElementById('dbsNumber').value : '',
-        availability: document.getElementById('availability').value,
-        certifications: certList.length ? certList.join(', ') : 'None listed',
-        previous_employer: document.getElementById('previousEmployer').value || 'Not provided',
-        why_join: document.getElementById('whyJoin').value || 'Not provided'
+        availability: document.getElementById('availability').value
       };
 
       emailjs.send(EMAILJS_CONFIG.serviceId, EMAILJS_CONFIG.driverTemplateId, params)
