@@ -329,16 +329,9 @@ document.addEventListener('DOMContentLoaded', function () {
       if (step === 1) {
         var firstName = document.getElementById('firstName');
         var lastName = document.getElementById('lastName');
-        var email = document.getElementById('email');
-        if (!firstName.value.trim() || !lastName.value.trim() || !email.value.trim()) {
-          alert('Please fill in your name and email before continuing.');
-          return false;
-        }
-      }
-      if (step === 2) {
-        var licenceType = document.getElementById('licenceType');
-        if (!licenceType.value) {
-          alert('Please select your licence type before continuing.');
+        var phone = document.getElementById('phone');
+        if (!firstName.value.trim() || !lastName.value.trim() || !phone.value.trim()) {
+          alert('Please fill in your name and phone number before continuing.');
           return false;
         }
       }
@@ -403,7 +396,10 @@ document.addEventListener('DOMContentLoaded', function () {
         })
         .catch(function (err) {
           console.error('EmailJS error:', err);
-          alert('Something went wrong. Please try again or call us directly.');
+          var msg = 'Something went wrong.';
+          if (err && err.text) msg += ' (' + err.text + ')';
+          else if (err && err.status) msg += ' Status: ' + err.status;
+          alert(msg + ' Please call us directly or try again.');
           if (btnSubmit) btnSubmit.disabled = false;
         });
     });
