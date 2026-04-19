@@ -42,8 +42,8 @@ document.addEventListener('DOMContentLoaded', function () {
   // ══════════════════════════════════════════
   var carouselSlides = document.querySelectorAll('.carousel-slide');
   var carouselDots = document.querySelectorAll('.carousel-dot');
-  var prevBtn = document.getElementById('carousel-prev');
-  var nextBtn = document.getElementById('carousel-next');
+  var prevBtn = document.querySelector('.carousel-prev');
+  var nextBtn = document.querySelector('.carousel-next');
 
   if (carouselSlides.length > 0) {
     var currentSlide = 0;
