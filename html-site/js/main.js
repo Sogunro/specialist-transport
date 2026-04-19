@@ -5,7 +5,7 @@
 
 // EmailJS configuration
 var EMAILJS_CONFIG = {
-  serviceId: 'service_8lwvt9g',
+  serviceId: 'service_2l35bfk',
   contactTemplateId: 'template_7lsga5j',
   driverTemplateId: 'template_4vtt7ql'
 };
@@ -282,7 +282,7 @@ document.addEventListener('DOMContentLoaded', function () {
       }
 
       // If entering step 4 (review), populate review fields
-      if (step === 4) {
+      if (step === totalSteps) {
         populateReview();
       }
 
