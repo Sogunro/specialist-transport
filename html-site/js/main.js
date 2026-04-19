@@ -357,9 +357,21 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     }
 
-    // Form submit (EmailJS)
-    registerForm.addEventListener('submit', function (e) {
-      e.preventDefault();
+    // Submit button handler (EmailJS)
+    function submitRegisterForm(e) {
+      if (e) e.preventDefault();
+
+      // Validate consent checkboxes
+      var consent1 = document.getElementById('agreeToCriminalCheck');
+      var consent2 = document.getElementById('agreeToTerms');
+      if (consent1 && !consent1.checked) {
+        alert('Please consent to the DBS criminal record check.');
+        return;
+      }
+      if (consent2 && !consent2.checked) {
+        alert('Please confirm all information is accurate and agree to terms.');
+        return;
+      }
 
       if (btnSubmit) btnSubmit.disabled = true;
 
@@ -402,7 +414,10 @@ document.addEventListener('DOMContentLoaded', function () {
           alert(msg + ' Please call us directly or try again.');
           if (btnSubmit) btnSubmit.disabled = false;
         });
-    });
+    }
+
+    if (btnSubmit) btnSubmit.addEventListener('click', submitRegisterForm);
+    registerForm.addEventListener('submit', submitRegisterForm);
   }
 
   // ══════════════════════════════════════════
